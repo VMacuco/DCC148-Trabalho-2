@@ -1,0 +1,17 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1794938519
+icon.svg::CompressedTexture2D::764844139068057771::1794916441::1794916595::1::::<><><>0<>0<>c8d0c8cad66a86473931edd1548ac75b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Assests/::1794916625
+::res://Assests/Player/::1794921199
+idle sheet-Sheet.png::CompressedTexture2D::713844771241786840::1794916720::1794916720::1::::<><><>0<>0<>c0def262538867e643c697700728fd20<>res://.godot/imported/idle sheet-Sheet.png-3c84887f593f4098f59a6275508db885.ctex::
+itch hurt 2 sheet-Sheet.png::CompressedTexture2D::528581038303542740::1794916720::1794916720::1::::<><><>0<>0<>db91986eba6d4b050d75d427ca6ead01<>res://.godot/imported/itch hurt 2 sheet-Sheet.png-3157c35fed2ff22cb1a24ab0dba11f2e.ctex::
+itch jump sheet-Sheet.png::CompressedTexture2D::5808196438114859624::1794916720::1794916720::1::::<><><>0<>0<>4761cd8b12b5c8fa39433f3e12b3dda7<>res://.godot/imported/itch jump sheet-Sheet.png-e9f6c423be9541f80f800960e1cb778f.ctex::
+itch light atk sheet-Sheet.png::CompressedTexture2D::1283205443554233344::1794916720::1794916720::1::::<><><>0<>0<>ef88ec819f7bc6d5e9276f0260d1bc83<>res://.godot/imported/itch light atk sheet-Sheet.png-af879227ce28efb6052c9797a21dbc04.ctex::
+itch run-Sheet sheet.png::CompressedTexture2D::8482594647015619889::1794916720::1794916720::1::::<><><>0<>0<>0597bdf2d74c206f1d6fb8029d20e7fd<>res://.godot/imported/itch run-Sheet sheet.png-3dc71f0df6ecf78baef6685a1f556dc1.ctex::
+red hood itch free Copy-Sheet.png::CompressedTexture2D::2074857588011950620::1794921196::1794921199::1::::<><><>0<>0<>7669d6a9342efb2dfe8dab64ab7d0229<>res://.godot/imported/red hood itch free Copy-Sheet.png-6bbb7d65965a792f96194ab87b8bda5e.ctex::
+run turnaround-Sheet.png::CompressedTexture2D::355083029044692319::1794916708::1794916708::1::::<><><>0<>0<>f8768cbe4e2021481b187367d6382c55<>res://.godot/imported/run turnaround-Sheet.png-6983df8ea1c52b1c2a7f14ef0c7c4466.ctex::
+wall slide-Sheet.png::CompressedTexture2D::8584304933061055416::1794916708::1794916708::1::::<><><>0<>0<>30cb27d3792f4f93436b63d5e668acbe<>res://.godot/imported/wall slide-Sheet.png-205d14b5486a77eff819045a502d760c.ctex::
+::res://Scenes/::1794923186
+::res://Scenes/Player/::1794923191
+Player.tscn::PackedScene::8997418549205507549::1794923191::0::1::::<><><>0<>0<><>::uid://4tcupe3mn6lc::::res://Assests/Player/red hood itch free Copy-Sheet.png
+::res://Scripts/::1794916618
