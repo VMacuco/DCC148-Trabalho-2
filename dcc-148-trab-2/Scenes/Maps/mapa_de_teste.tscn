@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dm14doqgde47u" path="res://Assests/Tileset/Pixel Woods Asset Pack/Tileset/Pixel_Woods_Tileset.png" id="1_0dy1t"]
 [ext_resource type="PackedScene" uid="uid://d1gof0lbq83lp" path="res://Scenes/Player/Player.tscn" id="2_vvp40"]
+[ext_resource type="PackedScene" uid="uid://de2nhx6dlmgpd" path="res://Scenes/whip_target.tscn" id="3_8rmst"]
+[ext_resource type="Texture2D" uid="uid://btmqndpqudj3t" path="res://Assests/Targets/Pendulum.png" id="4_ku6ma"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rmst"]
 texture = ExtResource("1_0dy1t")
@@ -213,3 +215,7 @@ tile_set = SubResource("TileSet_h0jfm")
 
 [node name="CharacterBody2D" parent="." unique_id=852017234 groups=["Player"] instance=ExtResource("2_vvp40")]
 position = Vector2(53, 42)
+
+[node name="Whip_Target" parent="." unique_id=2015582509 instance=ExtResource("3_8rmst")]
+position = Vector2(375, -83)
+texture = ExtResource("4_ku6ma")

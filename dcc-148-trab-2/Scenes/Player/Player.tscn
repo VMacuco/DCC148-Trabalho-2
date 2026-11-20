@@ -699,6 +699,7 @@ size = Vector2(16, 32)
 size = Vector2(28, 18)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=852017234]
+collision_layer = 2
 script = ExtResource("1_ft8w5")
 
 [node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=856813863]
@@ -719,3 +720,5 @@ shape = SubResource("RectangleShape2D_h0jfm")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1038382445]
+
+[node name="WhipLine" type="Line2D" parent="." unique_id=545375402]
