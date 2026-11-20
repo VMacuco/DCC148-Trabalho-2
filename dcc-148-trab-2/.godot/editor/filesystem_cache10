@@ -1,7 +1,8 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1795200560
+::res://::1795211004
 icon.svg::CompressedTexture2D::764844139068057771::1794916441::1794916595::1::::<><><>0<>0<>c8d0c8cad66a86473931edd1548ac75b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://Assests/::1795204806
+whip_target.gd::GDScript::106112968779854115::1795211004::0::1::::Whip_Target<>Area2D<><>0<>1<><>::
+::res://Assests/::1795211004
 ::res://Assests/Player/::1794921199
 idle sheet-Sheet.png::CompressedTexture2D::713844771241786840::1794916720::1794916720::1::::<><><>0<>0<>c0def262538867e643c697700728fd20<>res://.godot/imported/idle sheet-Sheet.png-3c84887f593f4098f59a6275508db885.ctex::
 itch hurt 2 sheet-Sheet.png::CompressedTexture2D::528581038303542740::1794916720::1794916720::1::::<><><>0<>0<>db91986eba6d4b050d75d427ca6ead01<>res://.godot/imported/itch hurt 2 sheet-Sheet.png-3157c35fed2ff22cb1a24ab0dba11f2e.ctex::
@@ -11,9 +12,9 @@ itch run-Sheet sheet.png::CompressedTexture2D::8482594647015619889::1794916720::
 red hood itch free Copy-Sheet.png::CompressedTexture2D::2074857588011950620::1794921196::1794921199::1::::<><><>0<>0<>7669d6a9342efb2dfe8dab64ab7d0229<>res://.godot/imported/red hood itch free Copy-Sheet.png-6bbb7d65965a792f96194ab87b8bda5e.ctex::
 run turnaround-Sheet.png::CompressedTexture2D::355083029044692319::1794916708::1794916708::1::::<><><>0<>0<>f8768cbe4e2021481b187367d6382c55<>res://.godot/imported/run turnaround-Sheet.png-6983df8ea1c52b1c2a7f14ef0c7c4466.ctex::
 wall slide-Sheet.png::CompressedTexture2D::8584304933061055416::1794916708::1794916708::1::::<><><>0<>0<>30cb27d3792f4f93436b63d5e668acbe<>res://.godot/imported/wall slide-Sheet.png-205d14b5486a77eff819045a502d760c.ctex::
-::res://Assests/Targets/::1795204829
-Hook.png::CompressedTexture2D::2939700009963737267::1795204829::1795204829::1::::<><><>0<>0<>849c01e72df69f281e9e167b970b9610<>res://.godot/imported/Hook.png-3bf53b0c1961d2a5802b5cca347fa130.ctex::
-Pendulum.png::CompressedTexture2D::3745776114565400199::1795204829::1795204829::1::::<><><>0<>0<>2fb76509f828dad0558110718354a02b<>res://.godot/imported/Pendulum.png-aba014e71e2fb16d580e84ae3de6aca0.ctex::
+::res://Assests/Targets/::1795211004
+Hook.png::CompressedTexture2D::2939700009963737267::1795211004::1795211047::1::::<><><>0<>0<>849c01e72df69f281e9e167b970b9610<>res://.godot/imported/Hook.png-3bf53b0c1961d2a5802b5cca347fa130.ctex::
+Pendulum.png::CompressedTexture2D::3745776114565400199::1795211004::1795211047::1::::<><><>0<>0<>2fb76509f828dad0558110718354a02b<>res://.godot/imported/Pendulum.png-aba014e71e2fb16d580e84ae3de6aca0.ctex::
 ::res://Assests/Tileset/::1795195072
 ::res://Assests/Tileset/Pixel Woods Asset Pack/::1795195072
 ::res://Assests/Tileset/Pixel Woods Asset Pack/Backgrounds/::1795195072
@@ -32,10 +33,11 @@ Woods 1.png::CompressedTexture2D::6485439222310931636::1795195072::1795195072::1
 Woods 2.png::CompressedTexture2D::363586610241642644::1795195072::1795195072::1::::<><><>0<>0<>f2de3ab651766c7e1b97f873706f3d01<>res://.godot/imported/Woods 2.png-de382809203d8cf24da0fa8ea3a40ea3.ctex::
 ::res://Assests/Tileset/Pixel Woods Asset Pack/Tileset/::1795195072
 Pixel_Woods_Tileset.png::CompressedTexture2D::8056968906833774168::1795195072::1795195072::1::::<><><>0<>0<>ecf5af77459cafefc03424a40c0dad7d<>res://.godot/imported/Pixel_Woods_Tileset.png-a13081ce90676e6d897903f98828cf0a.ctex::
-::res://Scenes/::1795195408
-::res://Scenes/Maps/::1795200567
-mapa_de_teste.tscn::PackedScene::2902465264296624213::1795200567::0::1::::<><><>0<>0<><>::uid://dm14doqgde47u::::res://Assests/Tileset/Pixel Woods Asset Pack/Tileset/Pixel_Woods_Tileset.png<>uid://d1gof0lbq83lp::::res://Scenes/Player/Player.tscn
-::res://Scenes/Player/::1795200799
-Player.tscn::PackedScene::8997418549205507549::1795195967::0::1::::<><><>0<>0<><>::uid://bp15ltptcq71y::::res://Scenes/Player/player.gd<>uid://4tcupe3mn6lc::::res://Assests/Player/red hood itch free Copy-Sheet.png
-player.gd::GDScript::3494769335367420236::1795200799::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+::res://Scenes/::1795211004
+whip_target.tscn::PackedScene::7496558702531820233::1795211004::0::1::::<><><>0<>0<><>::uid://brnwu32b8pdj::::res://whip_target.gd
+::res://Scenes/Maps/::1795211004
+mapa_de_teste.tscn::PackedScene::2902465264296624213::1795211004::0::1::::<><><>0<>0<><>::uid://dm14doqgde47u::::res://Assests/Tileset/Pixel Woods Asset Pack/Tileset/Pixel_Woods_Tileset.png<>uid://d1gof0lbq83lp::::res://Scenes/Player/Player.tscn<>uid://de2nhx6dlmgpd::::res://Scenes/whip_target.tscn<>uid://btmqndpqudj3t::::res://Assests/Targets/Pendulum.png
+::res://Scenes/Player/::1795211004
+Player.tscn::PackedScene::8997418549205507549::1795211004::0::1::::<><><>0<>0<><>::uid://bp15ltptcq71y::::res://Scenes/Player/player.gd<>uid://4tcupe3mn6lc::::res://Assests/Player/red hood itch free Copy-Sheet.png
+player.gd::GDScript::3494769335367420236::1795211004::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 ::res://Scripts/::1794916618

@@ -9,7 +9,7 @@ enum WhipState { NONE, FIRING, PULLING, SWINGING }
 @export var PULL_SPEED := 900.0         
 @export var LAUNCH_SPEED := 600.0       
 @export var LAUNCH_LOCK_TIME := 0.25   
-@export var SWING_KICK := 150.0         
+@export var SWING_KICK := 400.0         
 @export var SWING_RELEASE_LOCK := 0.2   
 @export_flags_2d_physics var WHIP_MASK := 5  # layers 1 (mundo) + 3 (alvos)
 
