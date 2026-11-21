@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var DASH_TIME := 0.2
 @export var WALL_FRICTION := 600.0
 @export var WALL_SPEED := 100.0
-@export var WALL_STICK_TIME := 0.25
+@export var WALL_STICK_TIME := 0.20
 @export var WALL_JUMP_PUSH := 400.0
 @export var WALL_JUMP_LOCK_TIME := 0.2
 @export var COYOTE_TIME := 0.1
