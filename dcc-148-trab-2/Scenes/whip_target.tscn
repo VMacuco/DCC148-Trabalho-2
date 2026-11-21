@@ -4,10 +4,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0jfm"]
 resource_local_to_scene = true
+radius = 27.018513
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ryepx"]
 resource_local_to_scene = true
-radius = 197.12433
+radius = 150.0
 
 [node name="Whip_Target" type="Area2D" unique_id=2015582509]
 script = ExtResource("1_cfv6f")
@@ -18,9 +19,7 @@ script = ExtResource("1_cfv6f")
 shape = SubResource("CircleShape2D_h0jfm")
 
 [node name="Pendulum_zone" type="Area2D" parent="." unique_id=716270907]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pendulum_zone" unique_id=177537566]
 shape = SubResource("CircleShape2D_ryepx")
-
-[connection signal="body_entered" from="Pendulum_zone" to="." method="_on_pendulum_zone_body_entered"]
-[connection signal="body_exited" from="Pendulum_zone" to="." method="_on_pendulum_zone_body_exited"]

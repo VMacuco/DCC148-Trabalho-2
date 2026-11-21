@@ -1,4 +1,10 @@
-res://Scenes/Player/Player.tscn
-res://Scenes/Player/player.gd
 res://Scenes/Maps/mapa_de_teste.tscn
+res://Scenes/Player/player.gd
+res://Scenes/whip_target.tscn
 res://whip_target.gd
+res://Scenes/Player/Player.tscn
+res://GameMannager.gd
+res://checkpoint.gd
+res://Scenes/checkpoint.tscn
+res://hitbox.gd
+res://Scenes/Player/hurtbox.gd

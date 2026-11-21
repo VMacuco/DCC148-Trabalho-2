@@ -5,9 +5,9 @@ enum WhipState { NONE, FIRING, PULLING, SWINGING }
 
 @export_group("Chicote")
 @export var WHIP_SPEED := 1800.0
-@export var WHIP_RANGE := 350.0         
+@export var WHIP_RANGE := 100.0         
 @export var PULL_SPEED := 900.0         
-@export var LAUNCH_SPEED := 600.0       
+@export var LAUNCH_SPEED := 500.0       
 @export var LAUNCH_LOCK_TIME := 0.25   
 @export var SWING_KICK := 150.0         
 @export var SWING_RELEASE_LOCK := 0.2   
@@ -52,10 +52,17 @@ var last_wall_normal_x := 0.0
 
 @onready var ColisionBox := $Colision
 @onready var Colision_dash := $Colison_dash
+@onready var Hurtbox := $Hurtbox/CollisionShape2D
 
 
 func _ready() -> void:
 	Colision_dash.disabled = true
+	GameMannager.respawn_player.connect(_respawn_player)
+	
+	if GameMannager.pending_spawn:
+		GameMannager.pending_spawn = false
+		global_position = GameMannager.SavePoint
+	GameMannager.Checkpoint = global_position
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("esquerda", "direita")
@@ -181,6 +188,14 @@ func wall_jump() -> void:
 	is_wall_sliding = false
 	wall_stick_timer = WALL_STICK_TIME
 	
+
+func _respawn_player()->void:
+	velocity = Vector2.ZERO
+	end_whip()
+	global_position = GameMannager.Checkpoint
+
+
+
 #-----------Funções do Chicote --------------------------------------------------
 
 #disparo
@@ -244,29 +259,37 @@ func process_pull(delta: float) -> void:
 	update_whip_line(whip_target.global_position)
 
 # pendulo
-func start_swing(target: Whip_Target)->void:
-	whip_target = target
-	var r = global_position - target.global_position
-	swing_length = maxf(r.length(), 30.0)
-	swing_angle = atan2(r.x, r.y)
-	
-	var aim := Input.get_vector("esquerda", "direita", "cima", "baixo")
-	swing_sign = signf(aim.x) if aim.x != 0.0 else facing
-	swing_omega = swing_sign * SWING_KICK / swing_length
+func start_swing(target: Whip_Target) -> void:
+	var r: Vector2 = global_position - target.global_position
+	if r.y <= 0.0:
+		return  # jogador acima do pivô: não há pêndulo possível
 
+	whip_target = target
+	swing_length = maxf(r.length(), 30.0)
+	swing_angle = atan2(r.x, r.y)  # 0 = embaixo do pivô
+
+	if absf(swing_angle) > 0.15:
+		# fora do centro: balança na direção natural, atravessando o ponto mais baixo
+		swing_sign = -signf(swing_angle)
+	else:
+		# quase embaixo: usa a mira
+		var aim := Input.get_vector("esquerda", "direita", "cima", "baixo")
+		swing_sign = signf(aim.x) if aim.x != 0.0 else facing
+
+	swing_omega = swing_sign * SWING_KICK / swing_length
 	is_wall_sliding = false
 	whip_state = WhipState.SWINGING
+
 
 func process_swing(delta: float) -> void:
 	if not Input.is_action_pressed("chicote"):
 		end_swing()
 		return
 
-	# pêndulo simples: θ'' = -(g/L)·sen(θ)
 	var g := get_gravity().length()
 	swing_omega += -(g / swing_length) * sin(swing_angle) * delta
 
-	# chegou na extremidade (a velocidade inverteu): solta sem voltar
+	# velocidade angular inverteu: chegou na extremidade
 	if swing_omega * swing_sign <= 0.0:
 		end_swing()
 		return
@@ -275,12 +298,16 @@ func process_swing(delta: float) -> void:
 	var pivot := whip_target.global_position
 	var new_pos := pivot + Vector2(sin(swing_angle), cos(swing_angle)) * swing_length
 
-	velocity = (new_pos - global_position) / delta
+	var motion := new_pos - global_position
+	velocity = motion / delta
 	move_and_slide()
 
-	if get_slide_collision_count() > 0:
-		end_swing()
-		return
+	# só encerra se bater de frente contra algo (chão rente não conta)
+	var dir := motion.normalized()
+	for i in get_slide_collision_count():
+		if get_slide_collision(i).get_normal().dot(dir) < -0.5:
+			end_swing()
+			return
 
 	update_whip_line(pivot)
 	

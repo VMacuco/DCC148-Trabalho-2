@@ -14,10 +14,13 @@ config/name="DCC148 - Trab 2"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameMannager="*uid://m0a2ijsg53qf"
+
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [global_group]
 
@@ -71,7 +74,8 @@ Interagir={
 2d_physics/layer_1="Mundo"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Alvos"
-2d_physics/layer_6="Hitbox_jogador"
+2d_physics/layer_6="Hurtbox_jogador"
+2d_physics/layer_7="Hitbox"
 
 [physics]
 
