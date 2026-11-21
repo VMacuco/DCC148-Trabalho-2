@@ -25,22 +25,47 @@ const layer_player := 2
 		if is_node_ready():
 			_apply_type()
 
+@export_group("Rotação (GRAPPLE)")
+@export var sprite_angle_offset := PI/2
+@export var turn_speed := 12.0
+@export var track_range := 0.0
 
-@onready var pendulum_zone:= $Pendulum_zone
-@onready var zone_shape:= $Pendulum_zone/CollisionShape2D
+
+@onready var pendulum_zone := $Pendulum_zone
+@onready var zone_shape := $Pendulum_zone/CollisionShape2D
+@onready var sprite: Sprite2D = $Sprite2D
+
+var player: Node2D
+var base_scale := Vector2(0.5, 0.5)
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Sprite2D.texture = texture
-	$Sprite2D.scale = Vector2(0.5,0.5)
+	sprite.texture = texture
+	sprite.scale = base_scale
 	_apply_type()
 
 	if Engine.is_editor_hint():
 		return
-	
+
 	pendulum_zone.body_entered.connect(_on_zone_entered)
 	pendulum_zone.body_exited.connect(_on_zone_exited)
+
+
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint() or type != Type.GRAPPLE:
+		return
+
+	if not is_instance_valid(player):
+		player = get_tree().get_first_node_in_group("Player") as Node2D
+		if player == null:
+			return
+
+	var dir := global_position - player.global_position  # jogador -> alvo
+	if dir.length() > track_range:
+		return
+
+	var target_angle := dir.angle() + sprite_angle_offset
+	sprite.global_rotation = lerp_angle(sprite.global_rotation, target_angle, turn_speed * delta)
 
 
 func _apply_type() -> void:
@@ -59,10 +84,17 @@ func _apply_type() -> void:
 			pendulum_zone.set_collision_mask_value(layer_player, true)
 			pendulum_zone.monitoring = true
 			zone_shape.set_deferred("disabled", false)
+			sprite.rotation = 0.0  # PENDULUM não gira
+
+
+func on_hooked() -> void:
+	var t := create_tween()
+	t.tween_property(sprite, "scale", base_scale * 1.3, 0.08)
+	t.tween_property(sprite, "scale", base_scale, 0.12)
+
 
 func _on_zone_entered(body: Node2D) -> void:
 	if body is Player:
-		#print("Player entrou na zona")
 		body.pendulum_zone_target = self
 
 

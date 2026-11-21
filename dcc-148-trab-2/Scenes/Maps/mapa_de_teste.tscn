@@ -225,8 +225,11 @@ SWING_KICK = 400.0
 [node name="Whip_Target" parent="." unique_id=2015582509 instance=ExtResource("3_8rmst")]
 position = Vector2(627, -220)
 scale = Vector2(0.5, 0.5)
+collision_layer = 1
 type = 1
 texture = ExtResource("4_ku6ma")
+sprite_angle_offset = 0.0
+track_range = 400.0
 
 [node name="Lago" type="Area2D" parent="." unique_id=1891355175]
 position = Vector2(-187, 99)
@@ -260,14 +263,18 @@ position = Vector2(-0.24841309, -0.13912964)
 [node name="Whip_Target3" parent="." unique_id=1465779911 instance=ExtResource("3_8rmst")]
 position = Vector2(462, -219)
 scale = Vector2(0.5, 0.5)
+collision_layer = 1
 type = 1
 texture = ExtResource("4_ku6ma")
+sprite_angle_offset = 0.0
+track_range = 400.0
 
 [node name="Whip_Target2" parent="." unique_id=1702867895 instance=ExtResource("3_8rmst")]
 position = Vector2(472, -61)
 scale = Vector2(0.5, 0.5)
-collision_layer = 5
 texture = ExtResource("5_rmlq0")
+sprite_angle_offset = 0.0
+track_range = 400.0
 
 [editable path="Checkpoint"]
 [editable path="SpawnPoint"]

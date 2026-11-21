@@ -9,3 +9,5 @@ res://Death_Transition.gdshader
 res://Scenes/Death_Transiton.tscn
 res://Scenes/death_transiton.gd
 res://Scenes/Maps/mapa_de_teste.tscn
+res://Scenes/whip_target.tscn
+res://whip_target.gd
