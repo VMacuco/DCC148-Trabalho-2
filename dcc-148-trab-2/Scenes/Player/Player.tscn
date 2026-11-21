@@ -672,7 +672,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sissg")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"damage",
 "speed": 5.0
 }, {
@@ -698,7 +698,7 @@ animations = [{
 size = Vector2(23, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0jfm"]
-size = Vector2(28, 18)
+size = Vector2(28, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl6ij"]
 size = Vector2(19, 27)
@@ -711,7 +711,9 @@ script = ExtResource("1_ft8w5")
 position = Vector2(2, -8.5)
 scale = Vector2(1, 0.953125)
 sprite_frames = SubResource("SpriteFrames_h0jfm")
-animation = &"Falling_begin"
+animation = &"damage"
+frame = 6
+frame_progress = 1.0
 script = ExtResource("3_h54ih")
 
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=428085725]
@@ -719,7 +721,7 @@ position = Vector2(4.5, 5)
 shape = SubResource("RectangleShape2D_ryepx")
 
 [node name="Colison_dash" type="CollisionShape2D" parent="." unique_id=1030888764]
-position = Vector2(7, 12)
+position = Vector2(7, 15)
 shape = SubResource("RectangleShape2D_h0jfm")
 disabled = true
 

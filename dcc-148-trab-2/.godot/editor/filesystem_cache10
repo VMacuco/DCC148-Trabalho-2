@@ -1,8 +1,16 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1795213815
+::res://::1795280576
+checkpoint.gd::GDScript::4494772056904777803::1795222127::0::1::::Check_Point<>Area2D<><>0<>0<><>::
+GameMannager.gd::GDScript::893924218860423781::1795220904::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D::764844139068057771::1794916441::1794916595::1::::<><><>0<>0<>c8d0c8cad66a86473931edd1548ac75b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-whip_target.gd::GDScript::106112968779854115::1795213815::0::1::::Whip_Target<>Area2D<><>0<>1<><>::
-::res://Assests/::1795212453
+whip_target.gd::GDScript::106112968779854115::1795214639::0::1::::Whip_Target<>Area2D<><>0<>1<><>::
+::res://Assests/::1795280963
+::res://Assests/Heart Bar/::1795280963
+Heart Stage 1.png::CompressedTexture2D::5155374136627255042::1795280963::1795280964::1::::<><><>0<>0<>2936885c45f505a8766d3a29c84a12ee<>res://.godot/imported/Heart Stage 1.png-6f33bebf6bc7023fa33c2c92b540f93f.ctex::
+Heart Stage 2.png::CompressedTexture2D::7842087670485132507::1795280963::1795280964::1::::<><><>0<>0<>0b2638d8f7a42b7aad39081d147157ab<>res://.godot/imported/Heart Stage 2.png-21bf06513805fde0d612a3fe5d9b4209.ctex::
+Heart Stage 3.png::CompressedTexture2D::8438761589333548675::1795280963::1795280964::1::::<><><>0<>0<>b9639cf17e712f63fca55c0450a5b72d<>res://.godot/imported/Heart Stage 3.png-5508f93a7bd0a210338bee52052becac.ctex::
+Heart Stage 4.png::CompressedTexture2D::4089350108829401009::1795280963::1795280964::1::::<><><>0<>0<>3177583d89f82bb758f5ff1febe05ee9<>res://.godot/imported/Heart Stage 4.png-ca29b73a9c71bad7ed9dc7dd30100c52.ctex::
+Heart Stage 5.png::CompressedTexture2D::8865798687695576796::1795280963::1795280964::1::::<><><>0<>0<>d494d4852da49b8b3bfdba0ef9844e09<>res://.godot/imported/Heart Stage 5.png-0bf6d84689043154fa9ef91c7cc1e007.ctex::
 ::res://Assests/Player/::1795214303
 idle sheet-Sheet.png::CompressedTexture2D::713844771241786840::1794916720::1794916720::1::::<><><>0<>0<>c0def262538867e643c697700728fd20<>res://.godot/imported/idle sheet-Sheet.png-3c84887f593f4098f59a6275508db885.ctex::
 itch hurt 2 sheet-Sheet.png::CompressedTexture2D::528581038303542740::1794916720::1794916720::1::::<><><>0<>0<>db91986eba6d4b050d75d427ca6ead01<>res://.godot/imported/itch hurt 2 sheet-Sheet.png-3157c35fed2ff22cb1a24ab0dba11f2e.ctex::
@@ -34,12 +42,14 @@ Woods 1.png::CompressedTexture2D::6485439222310931636::1795195072::1795195072::1
 Woods 2.png::CompressedTexture2D::363586610241642644::1795195072::1795195072::1::::<><><>0<>0<>f2de3ab651766c7e1b97f873706f3d01<>res://.godot/imported/Woods 2.png-de382809203d8cf24da0fa8ea3a40ea3.ctex::
 ::res://Assests/Tileset/Pixel Woods Asset Pack/Tileset/::1795195072
 Pixel_Woods_Tileset.png::CompressedTexture2D::8056968906833774168::1795195072::1795195072::1::::<><><>0<>0<>ecf5af77459cafefc03424a40c0dad7d<>res://.godot/imported/Pixel_Woods_Tileset.png-a13081ce90676e6d897903f98828cf0a.ctex::
-::res://Scenes/::1795213815
-whip_target.tscn::PackedScene::7496558702531820233::1795213815::0::1::::<><><>0<>0<><>::uid://brnwu32b8pdj::::res://whip_target.gd
-::res://Scenes/Maps/::1795213764
-mapa_de_teste.tscn::PackedScene::2902465264296624213::1795213764::0::1::::<><><>0<>0<><>::uid://dm14doqgde47u::::res://Assests/Tileset/Pixel Woods Asset Pack/Tileset/Pixel_Woods_Tileset.png<>uid://d1gof0lbq83lp::::res://Scenes/Player/Player.tscn<>uid://de2nhx6dlmgpd::::res://Scenes/whip_target.tscn<>uid://btmqndpqudj3t::::res://Assests/Targets/Pendulum.png
-::res://Scenes/Player/::1795214221
-player.gd::GDScript::3494769335367420236::1795213206::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
-Player.tscn::PackedScene::8997418549205507549::1795214221::0::1::::<><><>0<>0<><>::uid://bp15ltptcq71y::::res://Scenes/Player/player.gd<>uid://4tcupe3mn6lc::::res://Assests/Player/red hood itch free Copy-Sheet.png<>uid://bfaftapbt4v1j::::res://Scenes/Player/sprites.gd<>uid://kf16ip321tci::::res://Assests/Player/idle sheet-Sheet.png<>uid://dukkio07aqyma::::res://Assests/Player/wall slide-Sheet.png<>uid://c1vlslupuuep3::::res://Assests/Targets/Whip.png
+::res://Scenes/::1795222409
+checkpoint.tscn::PackedScene::786606904028804203::1795221751::0::1::::<><><>0<>0<><>::uid://b5bkiem57v7gx::::res://checkpoint.gd
+whip_target.tscn::PackedScene::7496558702531820233::1795222409::0::1::::<><><>0<>0<><>::uid://brnwu32b8pdj::::res://whip_target.gd
+::res://Scenes/Maps/::1795224004
+mapa_de_teste.tscn::PackedScene::2902465264296624213::1795224004::0::1::::<><><>0<>0<><>::uid://dm14doqgde47u::::res://Assests/Tileset/Pixel Woods Asset Pack/Tileset/Pixel_Woods_Tileset.png<>uid://d1gof0lbq83lp::::res://Scenes/Player/Player.tscn<>uid://de2nhx6dlmgpd::::res://Scenes/whip_target.tscn<>uid://btmqndpqudj3t::::res://Assests/Targets/Pendulum.png<>uid://lhbkhybl8vux::::res://Scenes/checkpoint.tscn<>uid://bh5aouxxta78b::::res://Assests/Targets/Hook.png
+::res://Scenes/Player/::1795220499
+hurtbox.gd::GDScript::2639606391289164696::1795217324::0::1::::<>Area2D<><>0<>0<><>::
+player.gd::GDScript::3494769335367420236::1795220499::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+Player.tscn::PackedScene::8997418549205507549::1795217727::0::1::::<><><>0<>0<><>::uid://bp15ltptcq71y::::res://Scenes/Player/player.gd<>uid://4tcupe3mn6lc::::res://Assests/Player/red hood itch free Copy-Sheet.png<>uid://bfaftapbt4v1j::::res://Scenes/Player/sprites.gd<>uid://kf16ip321tci::::res://Assests/Player/idle sheet-Sheet.png<>uid://dukkio07aqyma::::res://Assests/Player/wall slide-Sheet.png<>uid://dvksc8pb0grv2::::res://Assests/Player/Whip.png<>uid://bduv6w7ejko5e::::res://Scenes/Player/hurtbox.gd
 sprites.gd::GDScript::2737702440175345353::1795212453::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
 ::res://Scripts/::1794916618

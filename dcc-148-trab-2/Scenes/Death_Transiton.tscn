@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bdi1xmo4voad6"]
+
+[ext_resource type="Shader" uid="uid://cigj62c0xqbyt" path="res://Death_Transition.gdshader" id="1_oefbx"]
+[ext_resource type="Script" uid="uid://3a04x1g30381" path="res://Scenes/death_transiton.gd" id="1_sc7yu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h0jfm"]
+shader = ExtResource("1_oefbx")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 2.5
+shader_parameter/softness = 0.02
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=636703921]
+script = ExtResource("1_sc7yu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=331043087]
+material = SubResource("ShaderMaterial_h0jfm")
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

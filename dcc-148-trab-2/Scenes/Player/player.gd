@@ -65,6 +65,11 @@ func _ready() -> void:
 	GameMannager.Checkpoint = global_position
 
 func _physics_process(delta: float) -> void:
+	if GameMannager.is_player_dead:
+		end_whip()
+		velocity = Vector2.ZERO
+		return
+	
 	var direction := Input.get_axis("esquerda", "direita")
 	if direction:
 		facing = sign(direction)

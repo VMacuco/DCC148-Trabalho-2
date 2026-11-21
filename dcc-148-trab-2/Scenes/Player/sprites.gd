@@ -21,6 +21,9 @@ var state: State = State.IDLE
 
 func _ready() -> void:
 	animation_finished.connect(_on_animation_finished)
+	play("Idle")
+	GameMannager.Player_Death.connect(_process_player_death)
+	GameMannager.respawn_player.connect(func(): play("Idle"))
 
 
 func _process(_delta: float) -> void:
@@ -81,6 +84,9 @@ func _update_flip() -> void:
 	var off: Vector2 = OFFSETS.get(animation, Vector2.ZERO)
 	off.x *= dir
 	offset = off
+
+func _process_player_death()->void:
+	play("damage")
 
 
 func _on_animation_finished() -> void:
