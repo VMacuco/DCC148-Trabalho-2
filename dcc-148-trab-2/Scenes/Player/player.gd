@@ -26,9 +26,9 @@ var swing_sign := 1.0
 
 @onready var whip_line: Line2D = $WhipLine
 
-@export var SPEED := 300.0
+@export var SPEED := 220.0
 @export var JUMP_VELOCITY := -400.0
-@export var DASH_SPEED := 500.0
+@export var DASH_SPEED := 480.0
 @export var DASH_TIME := 0.2
 @export var WALL_FRICTION := 600.0
 @export var WALL_SPEED := 100.0
