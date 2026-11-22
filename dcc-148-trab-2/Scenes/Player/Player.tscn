@@ -711,9 +711,7 @@ script = ExtResource("1_ft8w5")
 position = Vector2(2, -8.5)
 scale = Vector2(1, 0.953125)
 sprite_frames = SubResource("SpriteFrames_h0jfm")
-animation = &"damage"
-frame = 6
-frame_progress = 1.0
+animation = &"Wall_slide"
 script = ExtResource("3_h54ih")
 
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=428085725]
