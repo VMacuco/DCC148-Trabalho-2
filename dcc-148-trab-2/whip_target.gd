@@ -19,7 +19,7 @@ const layer_player := 2
 		if is_node_ready():
 			$Sprite2D.texture = texture
 
-@export var zone_radius := 150.0:
+@export var zone_radius := 300.0:
 	set(value):
 		zone_radius = value
 		if is_node_ready():
