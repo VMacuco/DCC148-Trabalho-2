@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="DCC148 - Trab 2"
+run/main_scene="uid://bhl8gc0olh5dp"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +24,7 @@ Death_Transition="*uid://bdi1xmo4voad6"
 [display]
 
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [global_group]
 
@@ -90,4 +92,5 @@ Menu={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
