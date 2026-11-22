@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://kf16ip321tci" path="res://Assests/Player/idle sheet-Sheet.png" id="3_ude3g"]
 [ext_resource type="Texture2D" uid="uid://dukkio07aqyma" path="res://Assests/Player/wall slide-Sheet.png" id="4_jmcll"]
 [ext_resource type="Texture2D" uid="uid://dvksc8pb0grv2" path="res://Assests/Player/Whip.png" id="6_4wape"]
+[ext_resource type="Script" uid="uid://xmwc2thipkvh" path="res://Scenes/Player/camera_2d.gd" id="6_fk5o5"]
 [ext_resource type="Script" uid="uid://bduv6w7ejko5e" path="res://Scenes/Player/hurtbox.gd" id="7_t26db"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft8w5"]
@@ -700,6 +701,8 @@ size = Vector2(23, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0jfm"]
 size = Vector2(28, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pm27"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl6ij"]
 size = Vector2(19, 27)
 
@@ -711,21 +714,32 @@ script = ExtResource("1_ft8w5")
 position = Vector2(2, -8.5)
 scale = Vector2(1, 0.953125)
 sprite_frames = SubResource("SpriteFrames_h0jfm")
-animation = &"Wall_slide"
+
+animation = &"Walk"
+
 script = ExtResource("3_h54ih")
 
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=428085725]
-position = Vector2(4.5, 5)
+position = Vector2(3, 5)
 shape = SubResource("RectangleShape2D_ryepx")
 
 [node name="Colison_dash" type="CollisionShape2D" parent="." unique_id=1030888764]
-position = Vector2(7, 15)
+position = Vector2(3, 15)
 shape = SubResource("RectangleShape2D_h0jfm")
 disabled = true
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="Colison_dash" unique_id=1134860510]
+position = Vector2(0, -4)
+scale = Vector2(1.2, 1)
+enabled = false
+shape = SubResource("RectangleShape2D_3pm27")
+target_position = Vector2(0, -15)
+collide_with_areas = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1038382445]
 offset = Vector2(0, -50)
 zoom = Vector2(2, 2)
+script = ExtResource("6_fk5o5")
 
 [node name="WhipLine" type="Line2D" parent="." unique_id=545375402]
 texture_filter = 1
@@ -740,7 +754,7 @@ collision_mask = 64
 script = ExtResource("7_t26db")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=147857729]
-position = Vector2(4.5, 5.5)
+position = Vector2(3, 5)
 shape = SubResource("RectangleShape2D_bl6ij")
 
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]

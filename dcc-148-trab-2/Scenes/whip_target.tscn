@@ -4,11 +4,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0jfm"]
 resource_local_to_scene = true
-radius = 27.018513
+radius = 53.009434
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ryepx"]
 resource_local_to_scene = true
-radius = 150.0
+radius = 300.0
 
 [node name="Whip_Target" type="Area2D" unique_id=2015582509]
 collision_layer = 5

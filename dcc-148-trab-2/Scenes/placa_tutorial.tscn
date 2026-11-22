@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://chtkfil3xohh8"]
+
+[ext_resource type="Script" uid="uid://bpt751vpvx843" path="res://Scenes/placa_tutorial.gd" id="1_kysla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0jfm"]
+
+[node name="PlacaTutorial" type="Area2D" unique_id=98484163]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_kysla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=563657309]
+shape = SubResource("RectangleShape2D_h0jfm")
+
+[node name="Balão" type="PanelContainer" parent="." unique_id=1595895188]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Balão" unique_id=269587526]
+layout_mode = 2
+
+[node name="Texto" type="Label" parent="Balão/MarginContainer" unique_id=1583770339]
+layout_mode = 2

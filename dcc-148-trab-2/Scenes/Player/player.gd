@@ -7,11 +7,16 @@ enum WhipState { NONE, FIRING, PULLING, SWINGING }
 @export var WHIP_SPEED := 1800.0
 @export var WHIP_RANGE := 100.0         
 @export var PULL_SPEED := 900.0         
-@export var LAUNCH_SPEED := 500.0       
+@export var LAUNCH_SPEED := 500.0
+@export var LAUNCH_UP_FACTOR := 0.8
+@export var PULL_EXIT_SPEED := 200.0       
 @export var LAUNCH_LOCK_TIME := 0.25   
 @export var SWING_KICK := 150.0         
 @export var SWING_RELEASE_LOCK := 0.2   
 @export_flags_2d_physics var WHIP_MASK := 5  # layers 1 (mundo) + 3 (alvos)
+@export var WHIP_COOLDOWN : float = 0.6
+@export var WHIP_END_COOLDOWN : float = 0.3
+@export var SWING_MIN_DISTANCE : float = 20.0
 
 var whip_state := WhipState.NONE
 var whip_dir := Vector2.RIGHT
@@ -23,6 +28,7 @@ var swing_angle := 0.0
 var swing_omega := 0.0
 var swing_length := 0.0
 var swing_sign := 1.0
+var whip_cooldow : float = 0.0
 
 @onready var whip_line: Line2D = $WhipLine
 
@@ -30,6 +36,7 @@ var swing_sign := 1.0
 @export var JUMP_VELOCITY := -400.0
 @export var DASH_SPEED := 480.0
 @export var DASH_TIME := 0.2
+@export var DASH_COOLDOWN := 1.0
 @export var WALL_FRICTION := 600.0
 @export var WALL_SPEED := 100.0
 @export var WALL_STICK_TIME := 0.25
@@ -49,10 +56,13 @@ var dash_dir := 1.0
 var coyote_timer := 0.0
 var wall_coyote_timer := 0.0
 var last_wall_normal_x := 0.0
+var dash_cooldown_timer := 0.0
 
 @onready var ColisionBox := $Colision
 @onready var Colision_dash := $Colison_dash
 @onready var Hurtbox := $Hurtbox/CollisionShape2D
+@onready var Collision_Cast := $Colison_dash/ShapeCast2D
+
 
 
 func _ready() -> void:
@@ -65,6 +75,9 @@ func _ready() -> void:
 	GameMannager.Checkpoint = global_position
 
 func _physics_process(delta: float) -> void:
+	whip_cooldow = maxf(whip_cooldow - delta, 0.0)
+	dash_cooldown_timer = maxf(dash_cooldown_timer - delta, 0.0)
+	
 	if GameMannager.is_player_dead:
 		end_whip()
 		velocity = Vector2.ZERO
@@ -97,6 +110,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		is_jumping = true
 	else:
+		if is_jumping:
+			dash_cooldown_timer = 0.0
 		is_jumping = false
 		dash_blocked = false
 
@@ -117,6 +132,7 @@ func _physics_process(delta: float) -> void:
 		if coyote_timer > 0.0:
 			velocity.y = JUMP_VELOCITY
 			coyote_timer = 0.0
+			dash_cooldown_timer = 0.0
 		elif wall_coyote_timer > 0.0:
 			wall_jump()
 
@@ -133,16 +149,17 @@ func _physics_process(delta: float) -> void:
 
 	# Wall slide
 	handle_wall_slide(direction, delta)
-
+	
 	#Disparar Chicote
-	if Input.is_action_just_pressed("chicote") and whip_state == WhipState.NONE:
+	if Input.is_action_just_pressed("chicote") and whip_cooldow <= 0.0 and whip_state == WhipState.NONE:
+		whip_cooldow = WHIP_COOLDOWN
 		if pendulum_zone_target:
 			start_swing(pendulum_zone_target)
 		else:
 			start_whip_shoot()
 
 	# Dash
-	if Input.is_action_just_pressed("dash") and not dash_blocked:
+	if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0.0 and not dash_blocked:
 		start_dash()
 
 	move_and_slide()
@@ -155,14 +172,23 @@ func start_dash() -> void:
 	dash_blocked = true
 	dash_dir = facing
 	wall_jump_lock = 0.0
+	Hurtbox.set_deferred("disable", true)
 	ColisionBox.set_deferred("disabled", true)
 	Colision_dash.set_deferred("disabled", false)
+	Collision_Cast.set_deferred("enabled", true)
+	
 
 	await get_tree().create_timer(DASH_TIME).timeout
+	
+	while Collision_Cast.is_colliding():
+		await get_tree().create_timer(DASH_TIME/2).timeout
 
 	is_dashing = false
 	ColisionBox.set_deferred("disabled", false)
 	Colision_dash.set_deferred("disabled", true)
+	Collision_Cast.set_deferred("enabled", false)
+	Hurtbox.set_deferred("disable", true)
+	dash_cooldown_timer = DASH_COOLDOWN
 	velocity.x = 0.0
 
 
@@ -240,32 +266,42 @@ func updade_whip_shoot(delta:float)->void:
 #Puxão
 func process_pull(delta: float) -> void:
 	if not Input.is_action_pressed("chicote"):
-		end_whip()
+		cancel_pull()
 		return
 
 	var to_target := whip_target.global_position - global_position
 	var dist := to_target.length()
+	pull_dir = to_target.normalized()   # atualiza ANTES de usar
 
 	if dist <= maxf(20.0, PULL_SPEED * delta):
-		# chegou: arremessa na direção do movimento
-		velocity = pull_dir * LAUNCH_SPEED
+		var launch := pull_dir * LAUNCH_SPEED
+		if launch.y < 0.0:
+			launch.y *= LAUNCH_UP_FACTOR
+		velocity = launch            # substitui, nunca soma
 		wall_jump_lock = LAUNCH_LOCK_TIME
 		end_whip()
 		return
 
-	pull_dir = to_target.normalized()
 	velocity = pull_dir * PULL_SPEED
 	move_and_slide()
 
 	if get_slide_collision_count() > 0:
-		end_whip()  # bateu em algo no caminho
+		cancel_pull()
 		return
 
 	update_whip_line(whip_target.global_position)
 
+
+func cancel_pull() -> void:
+	# saída do puxão: limita a velocidade em vez de sair a 900
+	velocity = velocity.limit_length(PULL_EXIT_SPEED)
+	end_whip()
+
 # pendulo
 func start_swing(target: Whip_Target) -> void:
 	var r: Vector2 = global_position - target.global_position
+	if r.length() < SWING_MIN_DISTANCE:
+		return
 	if r.y <= 0.0:
 		return  # jogador acima do pivô: não há pêndulo possível
 
@@ -322,6 +358,8 @@ func end_swing() -> void:
 	
 #Comum
 func end_whip() -> void:
+	if whip_state != WhipState.NONE:
+		whip_cooldow = maxf(whip_cooldow, WHIP_END_COOLDOWN)
 	whip_state = WhipState.NONE
 	whip_target = null
 	whip_line.clear_points()
