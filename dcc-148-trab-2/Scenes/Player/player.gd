@@ -7,7 +7,9 @@ enum WhipState { NONE, FIRING, PULLING, SWINGING }
 @export var WHIP_SPEED := 1800.0
 @export var WHIP_RANGE := 100.0         
 @export var PULL_SPEED := 900.0         
-@export var LAUNCH_SPEED := 500.0       
+@export var LAUNCH_SPEED := 500.0
+@export var LAUNCH_UP_FACTOR := 0.8
+@export var PULL_EXIT_SPEED := 200.0       
 @export var LAUNCH_LOCK_TIME := 0.25   
 @export var SWING_KICK := 150.0         
 @export var SWING_RELEASE_LOCK := 0.2   
@@ -264,28 +266,36 @@ func updade_whip_shoot(delta:float)->void:
 #Puxão
 func process_pull(delta: float) -> void:
 	if not Input.is_action_pressed("chicote"):
-		end_whip()
+		cancel_pull()
 		return
 
 	var to_target := whip_target.global_position - global_position
 	var dist := to_target.length()
+	pull_dir = to_target.normalized()   # atualiza ANTES de usar
 
 	if dist <= maxf(20.0, PULL_SPEED * delta):
-		# chegou: arremessa na direção do movimento
-		velocity = pull_dir * LAUNCH_SPEED
+		var launch := pull_dir * LAUNCH_SPEED
+		if launch.y < 0.0:
+			launch.y *= LAUNCH_UP_FACTOR
+		velocity = launch            # substitui, nunca soma
 		wall_jump_lock = LAUNCH_LOCK_TIME
 		end_whip()
 		return
 
-	pull_dir = to_target.normalized()
 	velocity = pull_dir * PULL_SPEED
 	move_and_slide()
 
 	if get_slide_collision_count() > 0:
-		end_whip()  # bateu em algo no caminho
+		cancel_pull()
 		return
 
 	update_whip_line(whip_target.global_position)
+
+
+func cancel_pull() -> void:
+	# saída do puxão: limita a velocidade em vez de sair a 900
+	velocity = velocity.limit_length(PULL_EXIT_SPEED)
+	end_whip()
 
 # pendulo
 func start_swing(target: Whip_Target) -> void:

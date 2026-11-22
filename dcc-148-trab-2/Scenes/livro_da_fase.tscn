@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cd4dun8rhiawv"]
+
+[ext_resource type="Script" uid="uid://bo0s6vl2ikub" path="res://livro_da_fase.gd" id="1_pm8j5"]
+[ext_resource type="Texture2D" uid="uid://rm35try5ydic" path="res://Assests/Livros/Grimório Ripto's rage.png" id="2_jdhqo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h0jfm"]
+radius = 113.7717
+
+[node name="Livro da Fase" type="Area2D" unique_id=78483132]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_pm8j5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=611480571]
+texture = ExtResource("2_jdhqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2100976969]
+shape = SubResource("CircleShape2D_h0jfm")
+
+[node name="Label" type="Label" parent="." unique_id=1912549853]
+offset_left = -9.0
+offset_top = -61.0
+offset_right = 31.0
+offset_bottom = -38.0
+text = "E"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
