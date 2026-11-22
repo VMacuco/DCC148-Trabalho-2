@@ -30,10 +30,11 @@ var whip_cooldow : float = 0.0
 
 @onready var whip_line: Line2D = $WhipLine
 
-@export var SPEED := 300.0
+@export var SPEED := 220.0
 @export var JUMP_VELOCITY := -400.0
-@export var DASH_SPEED := 500.0
+@export var DASH_SPEED := 480.0
 @export var DASH_TIME := 0.2
+@export var DASH_COOLDOWN := 1.0
 @export var WALL_FRICTION := 600.0
 @export var WALL_SPEED := 100.0
 @export var WALL_STICK_TIME := 0.25
@@ -53,6 +54,7 @@ var dash_dir := 1.0
 var coyote_timer := 0.0
 var wall_coyote_timer := 0.0
 var last_wall_normal_x := 0.0
+var dash_cooldown_timer := 0.0
 
 @onready var ColisionBox := $Colision
 @onready var Colision_dash := $Colison_dash
@@ -72,6 +74,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	whip_cooldow = maxf(whip_cooldow - delta, 0.0)
+	dash_cooldown_timer = maxf(dash_cooldown_timer - delta, 0.0)
 	
 	if GameMannager.is_player_dead:
 		end_whip()
@@ -105,6 +108,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		is_jumping = true
 	else:
+		if is_jumping:
+			dash_cooldown_timer = 0.0
 		is_jumping = false
 		dash_blocked = false
 
@@ -125,6 +130,7 @@ func _physics_process(delta: float) -> void:
 		if coyote_timer > 0.0:
 			velocity.y = JUMP_VELOCITY
 			coyote_timer = 0.0
+			dash_cooldown_timer = 0.0
 		elif wall_coyote_timer > 0.0:
 			wall_jump()
 
@@ -151,7 +157,7 @@ func _physics_process(delta: float) -> void:
 			start_whip_shoot()
 
 	# Dash
-	if Input.is_action_just_pressed("dash") and not dash_blocked:
+	if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0.0 and not dash_blocked:
 		start_dash()
 
 	move_and_slide()
@@ -180,6 +186,7 @@ func start_dash() -> void:
 	Colision_dash.set_deferred("disabled", true)
 	Collision_Cast.set_deferred("enabled", false)
 	Hurtbox.set_deferred("disable", true)
+	dash_cooldown_timer = DASH_COOLDOWN
 	velocity.x = 0.0
 
 

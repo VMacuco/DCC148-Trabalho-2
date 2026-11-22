@@ -228,7 +228,6 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 1
 type = 1
 texture = ExtResource("4_ku6ma")
-zone_radius = 300.0
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -267,7 +266,6 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 1
 type = 1
 texture = ExtResource("4_ku6ma")
-zone_radius = 300.0
 sprite_angle_offset = 0.0
 track_range = 400.0
 
