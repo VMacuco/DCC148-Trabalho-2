@@ -6,7 +6,7 @@ const LEVELS := {
 	1: "res://Scenes/Maps/Mapa_Tutorial.tscn",
 	2: "res://Scenes/Maps/Mapa_1/mapa_1.tscn",
 	3: "res://Scenes/Maps/F3/e.tscn",
-	4: "caminho Guilherme"
+	4: "res://Scenes/Maps/mapa4.tscn"
 }
 const END_SCENE := "Cena dos créditos"   # depois da última fase
 

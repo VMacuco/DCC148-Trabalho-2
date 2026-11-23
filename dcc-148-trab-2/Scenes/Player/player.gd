@@ -29,8 +29,12 @@ var swing_omega := 0.0
 var swing_length := 0.0
 var swing_sign := 1.0
 var whip_cooldow : float = 0.0
+signal whip_started
+signal whip_ended
 
 @onready var whip_line: Line2D = $WhipLine
+@onready var sprite := $Sprites
+@onready var whip_orign := $Sprites/WhipOrign
 
 @export var SPEED := 220.0
 @export var JUMP_VELOCITY := -400.0
@@ -241,6 +245,7 @@ func start_whip_shoot()->void:
 	whip_dir = aim if aim != Vector2.ZERO else Vector2(facing,0.0)
 	whip_length = 0.0
 	whip_state = WhipState.FIRING
+	whip_started.emit()
 
 func updade_whip_shoot(delta:float)->void:
 	if not Input.is_action_pressed("chicote"):
@@ -328,6 +333,7 @@ func start_swing(target: Whip_Target) -> void:
 	swing_omega = swing_sign * SWING_KICK / swing_length
 	is_wall_sliding = false
 	whip_state = WhipState.SWINGING
+	whip_started.emit()
 
 
 func process_swing(delta: float) -> void:
@@ -368,14 +374,42 @@ func end_swing() -> void:
 func end_whip() -> void:
 	if whip_state != WhipState.NONE:
 		whip_cooldow = maxf(whip_cooldow, WHIP_END_COOLDOWN)
+		whip_ended.emit()
 	whip_state = WhipState.NONE
 	whip_target = null
 	whip_line.clear_points()
 
 
 func update_whip_line(world_end: Vector2) -> void:
+	var origin := get_whip_orign()
+
+	print("ORIGEM GLOBAL: ", origin)
+	print("DESTINO GLOBAL: ", world_end)
+
 	whip_line.clear_points()
-	whip_line.add_point(Vector2.ZERO)
-	whip_line.add_point(to_local(world_end))
+	whip_line.add_point(whip_line.to_local(origin))
+	whip_line.add_point(whip_line.to_local(world_end))
+
+	whip_line.visible = true
+
+	print("PONTOS DA LINHA: ", whip_line.get_point_count())
+	
+func get_whip_orign() -> Vector2:
+	var marker_position:Vector2 = whip_orign.position
+	if sprite.flip_h:
+		marker_position.x = -marker_position.x
+	return sprite.to_global(marker_position)
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 

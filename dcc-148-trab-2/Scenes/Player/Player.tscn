@@ -625,7 +625,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b7nrf")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Whip_magic_cast",
 "speed": 5.0
 }, {
@@ -647,7 +647,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ntbx5")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Whip_magic_release",
 "speed": 5.0
 }, {
@@ -714,19 +714,25 @@ script = ExtResource("1_ft8w5")
 position = Vector2(2, -8.5)
 scale = Vector2(1, 0.953125)
 sprite_frames = SubResource("SpriteFrames_h0jfm")
-animation = &"Walk"
+animation = &"Whip_magic_release"
 script = ExtResource("3_h54ih")
 
+[node name="WhipOrign" type="Marker2D" parent="Sprites" unique_id=1038221231]
+position = Vector2(-9, 12.065574)
+
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=428085725]
+visible = false
 position = Vector2(3, 5)
 shape = SubResource("RectangleShape2D_ryepx")
 
 [node name="Colison_dash" type="CollisionShape2D" parent="." unique_id=1030888764]
+visible = false
 position = Vector2(3, 15)
 shape = SubResource("RectangleShape2D_h0jfm")
 disabled = true
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="Colison_dash" unique_id=1134860510]
+visible = false
 position = Vector2(0, -4)
 scale = Vector2(1.2, 1)
 enabled = false
@@ -735,11 +741,13 @@ target_position = Vector2(0, -15)
 collide_with_areas = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1038382445]
+visible = false
 offset = Vector2(0, -50)
 zoom = Vector2(2, 2)
 script = ExtResource("6_fk5o5")
 
 [node name="WhipLine" type="Line2D" parent="." unique_id=545375402]
+visible = false
 texture_filter = 1
 texture_repeat = 2
 width = 3.0
@@ -747,11 +755,13 @@ texture = ExtResource("6_4wape")
 texture_mode = 1
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=834850216]
+visible = false
 collision_layer = 32
 collision_mask = 64
 script = ExtResource("7_t26db")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=147857729]
+visible = false
 position = Vector2(3, 5)
 shape = SubResource("RectangleShape2D_bl6ij")
 
