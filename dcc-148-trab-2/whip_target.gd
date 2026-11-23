@@ -25,6 +25,12 @@ const layer_player := 2
 		if is_node_ready():
 			_apply_type()
 
+@export var resets_dash := false:
+	set(value):
+		resets_dash = value
+		if is_node_ready():
+			_apply_color()
+
 @export_group("Rotação (GRAPPLE)")
 @export var sprite_angle_offset := PI/2
 @export var turn_speed := 12.0
@@ -43,6 +49,7 @@ func _ready() -> void:
 	sprite.texture = texture
 	sprite.scale = base_scale
 	_apply_type()
+	_apply_color()
 
 	if Engine.is_editor_hint():
 		return
@@ -71,6 +78,12 @@ func _process(delta: float) -> void:
 func _apply_type() -> void:
 	if zone_shape.shape is CircleShape2D:
 		zone_shape.shape.radius = zone_radius
+
+func _apply_color() -> void:
+	if resets_dash:
+		sprite.modulate = Color(1.0, 0.9, 0.1)  # amarelo
+	else:
+		sprite.modulate = Color.WHITE
 
 	match type:
 		Type.GRAPPLE:
