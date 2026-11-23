@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 	whip_cooldow = maxf(whip_cooldow - delta, 0.0)
 	dash_cooldown_timer = maxf(dash_cooldown_timer - delta, 0.0)
 	
-	if GameMannager.is_player_dead:
+	if GameMannager.is_player_dead or LevelMannager.changing:
 		end_whip()
 		velocity = Vector2.ZERO
 		return

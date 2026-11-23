@@ -24,7 +24,9 @@ func _ready() -> void:
 	sprite.texture = texture
 	if Engine.is_editor_hint():
 		return
-
+	
+	Level_Complete.connect(LevelMannager.complete_level)
+	
 	promptlabel.modulate.a = 0.0
 	promptlabel.visible = false
 

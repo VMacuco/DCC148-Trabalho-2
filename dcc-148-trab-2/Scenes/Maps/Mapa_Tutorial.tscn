@@ -493,7 +493,7 @@ tile_set = SubResource("TileSet_h0jfm")
 position = Vector2(3921, -10)
 texture = ExtResource("9_4bj2d")
 
-[node name="CharacterBody2D" parent="." unique_id=852017234 groups=["Player"] instance=ExtResource("7_ensux")]
+[node name="Player" parent="." unique_id=852017234 groups=["Player"] instance=ExtResource("7_ensux")]
 position = Vector2(-119, 315)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1195922325]

@@ -671,7 +671,7 @@ tile_map_data = PackedByteArray("AADv/wIAAAANAAoAAADw/wIAAAAOAAoAAADx/wIAAAAPAAo
 tile_set = SubResource("TileSet_e7x7s")
 script = ExtResource("2_kxodj")
 
-[node name="CharacterBody2D" parent="." unique_id=852017234 groups=["Player"] instance=ExtResource("3_pea3c")]
+[node name="Player" parent="." unique_id=852017234 groups=["Player"] instance=ExtResource("3_pea3c")]
 position = Vector2(-2, 4)
 
 [node name="Whip_Target2" parent="." unique_id=2015582509 instance=ExtResource("5_pea3c")]
