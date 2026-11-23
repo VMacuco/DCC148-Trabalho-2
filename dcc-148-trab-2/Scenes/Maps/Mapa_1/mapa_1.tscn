@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bcb7uxueulxrv"]
 
-[ext_resource type="Texture2D" uid="uid://cn2820p87pyvf" path="res://Assests/Tileset/Final/Background_0.png" id="1_8a080"]
-[ext_resource type="Texture2D" uid="uid://bcadgowhhn8bs" path="res://Assests/Tileset/Final/Tiles.png" id="1_kxodj"]
-[ext_resource type="Texture2D" uid="uid://cxir8kelaxsdh" path="res://Assests/Tileset/Final/Background_1.png" id="2_bajru"]
+[ext_resource type="Texture2D" uid="uid://cn2820p87pyvf" path="res://Assests/Tileset/Mapa 1/Background_0.png" id="1_8a080"]
+[ext_resource type="Texture2D" uid="uid://bcadgowhhn8bs" path="res://Assests/Tileset/Mapa 1/Tiles.png" id="1_kxodj"]
+[ext_resource type="Texture2D" uid="uid://cxir8kelaxsdh" path="res://Assests/Tileset/Mapa 1/Background_1.png" id="2_bajru"]
 [ext_resource type="Script" uid="uid://djjyaslb05fnm" path="res://Scenes/Maps/Mapa_1/tile_map_layer.gd" id="2_kxodj"]
 [ext_resource type="PackedScene" uid="uid://d1gof0lbq83lp" path="res://Scenes/Player/Player.tscn" id="3_pea3c"]
 [ext_resource type="PackedScene" uid="uid://bpmssstydcwug" path="res://Scenes/Gimmicks/TransportPlataform.tscn" id="4_fv3l0"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://lhbkhybl8vux" path="res://Scenes/checkpoint.tscn" id="8_e7xkp"]
 [ext_resource type="PackedScene" uid="uid://cd4dun8rhiawv" path="res://Scenes/livro_da_fase.tscn" id="11_bajru"]
 [ext_resource type="Texture2D" uid="uid://cbplx6lhdgprh" path="res://Assests/Livros/Morrigan.png" id="12_8u3pr"]
+[ext_resource type="AudioStream" uid="uid://bt8apbrdln0fy" path="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/WAV/Sneaky .wav" id="13_5ywyi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6csy8"]
 texture = ExtResource("1_kxodj")
@@ -799,6 +800,10 @@ text = "Beginning or end, the only way out is through."
 [node name="Livro da Fase" parent="." unique_id=78483132 instance=ExtResource("11_bajru")]
 position = Vector2(9482, -735)
 texture = ExtResource("12_8u3pr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=510024400]
+stream = ExtResource("13_5ywyi")
+autoplay = true
 
 [editable path="Checkpoint"]
 [editable path="Checkpoint2"]

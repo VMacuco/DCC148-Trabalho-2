@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bh5aouxxta78b" path="res://Assests/Targets/Hook.png" id="10_mdiyn"]
 [ext_resource type="PackedScene" uid="uid://lhbkhybl8vux" path="res://Scenes/checkpoint.tscn" id="11_q3sph"]
 [ext_resource type="PackedScene" uid="uid://chtkfil3xohh8" path="res://Scenes/placa_tutorial.tscn" id="14_4bj2d"]
+[ext_resource type="AudioStream" uid="uid://bw2fahtoyfvw1" path="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/OGG/Enchanted Woods.ogg" id="15_5a0mu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfidq"]
 texture = ExtResource("6_li5sa")
@@ -688,7 +689,7 @@ position = Vector2(2, -10)
 scale = Vector2(4, 2)
 
 [node name="Texto" parent="PlacaTutorial_dash/Balão/MarginContainer" parent_id_path=PackedInt32Array(651980063, 269587526) index="0" unique_id=1583770339]
-text = "Pressine [shift] para avançar para o lado."
+text = "Pressine [shift] para ."
 
 [node name="PlacaTutorial_dash2" parent="." unique_id=1334093033 instance=ExtResource("14_4bj2d")]
 position = Vector2(830, 326)
@@ -777,6 +778,10 @@ scale = Vector2(6, 4)
 
 [node name="Texto" parent="PlacaTutorial4/Balão/MarginContainer" parent_id_path=PackedInt32Array(411433083, 269587526) index="0" unique_id=1583770339]
 text = "Aperte [A,D] para Andar."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1641747836]
+stream = ExtResource("15_5a0mu")
+autoplay = true
 
 [editable path="Checkpoint"]
 [editable path="Checkpoint2"]
