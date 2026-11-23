@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b37mtu8ilfgs0"]
+
+[ext_resource type="Script" uid="uid://dw0guw3ucpbqr" path="res://porta.gd" id="1_e04eg"]
+[ext_resource type="Texture2D" uid="uid://d375xpamexpeh" path="res://Assests/Extras/Porta.png" id="2_w85fd"]
+[ext_resource type="Texture2D" uid="uid://54tjexaihwth" path="res://Assests/Extras/Porta2.png" id="3_o6007"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0jfm"]
+size = Vector2(35, 48)
+
+[node name="Porta" type="Area2D" unique_id=1657260937]
+collision_mask = 2
+script = ExtResource("1_e04eg")
+
+[node name="Arco" type="Sprite2D" parent="." unique_id=380292138]
+texture = ExtResource("2_w85fd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1965451339]
+position = Vector2(-0.5, 8)
+shape = SubResource("RectangleShape2D_h0jfm")
+
+[node name="Pedra" type="Sprite2D" parent="." unique_id=520145221]
+position = Vector2(1, 2)
+texture = ExtResource("3_o6007")
+
+[node name="Label" type="Label" parent="." unique_id=1948070494]
+offset_left = -4.0
+offset_top = -56.0
+offset_right = 36.0
+offset_bottom = -33.0
+text = "E"

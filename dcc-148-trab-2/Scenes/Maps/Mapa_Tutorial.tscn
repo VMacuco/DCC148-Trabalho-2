@@ -413,7 +413,7 @@ size = Vector2(240, 95.99999)
 size = Vector2(198, 383)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nvk2"]
-size = Vector2(1183, 95)
+size = Vector2(1500, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6x1h"]
 size = Vector2(1279, 145)
@@ -636,7 +636,7 @@ collision_layer = 64
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=976614215]
-position = Vector2(48.390137, -6.700012)
+position = Vector2(-110.10986, -6.700012)
 shape = SubResource("RectangleShape2D_4nvk2")
 
 [node name="Area2D6" type="Area2D" parent="." unique_id=996768851]
@@ -688,7 +688,7 @@ position = Vector2(2, -10)
 scale = Vector2(4, 2)
 
 [node name="Texto" parent="PlacaTutorial_dash/Balão/MarginContainer" parent_id_path=PackedInt32Array(651980063, 269587526) index="0" unique_id=1583770339]
-text = "Pressine [shift] para avançar para o lado."
+text = "Pressine [shift] para ."
 
 [node name="PlacaTutorial_dash2" parent="." unique_id=1334093033 instance=ExtResource("14_4bj2d")]
 position = Vector2(830, 326)

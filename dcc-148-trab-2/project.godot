@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameMannager="*uid://m0a2ijsg53qf"
 Hud="*uid://cx078utqop4l4"
 Death_Transition="*uid://bdi1xmo4voad6"
+LevelGraph="*uid://mlufvbmad1ki"
 
 [display]
 
