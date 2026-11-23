@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpmssstydcwug"]
 
-[ext_resource type="Texture2D" uid="uid://bcadgowhhn8bs" path="res://Assests/Tileset/Final/Tiles.png" id="1_8wyki"]
+[ext_resource type="Texture2D" uid="uid://bcadgowhhn8bs" path="res://Assests/Tileset/Mapa 1/Tiles.png" id="1_8wyki"]
 [ext_resource type="Script" uid="uid://bc34v143j3y4m" path="res://Scenes/Gimmicks/transport_plataform.gd" id="1_ht6ks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6tdp"]

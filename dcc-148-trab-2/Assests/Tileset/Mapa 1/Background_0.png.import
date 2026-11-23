@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c46dnmajwaiud"
-path="res://.godot/imported/Salt.png-646e7b051fead7d73cde06c836878404.ctex"
+uid="uid://cn2820p87pyvf"
+path="res://.godot/imported/Background_0.png-db63c9412dcc00b0f809bf09be8cbec3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Tileset/Final/Salt.png"
-dest_files=["res://.godot/imported/Salt.png-646e7b051fead7d73cde06c836878404.ctex"]
+source_file="res://Assests/Tileset/Mapa 1/Background_0.png"
+dest_files=["res://.godot/imported/Background_0.png-db63c9412dcc00b0f809bf09be8cbec3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcadgowhhn8bs"
-path="res://.godot/imported/Tiles.png-6362bb5cb376c6addcbbbc0c3514b8e5.ctex"
+uid="uid://bw12riqsqi0e1"
+path="res://.godot/imported/Cover.png-ab8d023e2f79b854bcd539c09d70fd07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Tileset/Final/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-6362bb5cb376c6addcbbbc0c3514b8e5.ctex"]
+source_file="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/Cover.png"
+dest_files=["res://.godot/imported/Cover.png-ab8d023e2f79b854bcd539c09d70fd07.ctex"]
 
 [params]
 
