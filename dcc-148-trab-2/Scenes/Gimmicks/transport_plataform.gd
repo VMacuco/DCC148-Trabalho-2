@@ -9,10 +9,14 @@ enum Estado { PARADA, ATIVANDO, INDO, VOLTANDO }
 		if is_inside_tree():
 			atualizar_trilho()
 
-@export var velocidade: float = 200.0 # Velocidade de ida em pixels por segundo
-@export var velocidade_retorno: float = 60.0 # Velocidade de retorno em pixels por segundo
-@export var pausa_no_inicio: float = 0.2 # Pequena pausa antes de arrancar (0.0 para sair na hora)
-@export var pausa_no_final: float = 0.2 # Pequena pausa antes de começar a voltar (0.0 para voltar na hora)
+# como no celeste a ideia é que a plataforma vá rapidinho pra 
+# ter chance do player bater num espinho ou algo do tipo
+# e volta sozinho; e espera um pouco pra começar o movimento
+# e pra fazer a volta
+@export var velocidade: float = 200.0 
+@export var velocidade_retorno: float = 60.0 
+@export var pausa_no_inicio: float = 0.2  
+@export var pausa_no_final: float = 0.2 
 
 @onready var plataforma: AnimatableBody2D = $Plataform
 
@@ -30,7 +34,9 @@ func atualizar_trilho() -> void:
 	
 	if not inicio or not final or not trilho:
 		return
-		
+	# talvez a parte mais interessante:
+	# define-se o posicionamento do trilho (ponto de fim e trilho)
+	# a partir do deslocamento (que pode e deve ser colocado via inspetor)
 	inicio.position = Vector2.ZERO
 	final.position = deslocamento
 	trilho.points = PackedVector2Array([Vector2.ZERO, deslocamento])
@@ -41,7 +47,8 @@ func _physics_process(delta: float) -> void:
 		
 	match estado_atual:
 		Estado.PARADA:
-			# Se o jogador já estiver encostando quando ela terminar de voltar, inicia a contagem para disparar
+			# se o jogador já estiver encostando quando ela terminar de voltar, 
+			# inicia a contagem para disparar
 			if jogador_encostando:
 				iniciar_ativacao()
 				
@@ -72,6 +79,7 @@ func iniciar_ativacao() -> void:
 	timer_pausa = pausa_no_inicio
 	estado_atual = Estado.ATIVANDO
 
+# o jogador ativa a ida
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body is Player or body.is_in_group("player"):
 		jogador_encostando = true

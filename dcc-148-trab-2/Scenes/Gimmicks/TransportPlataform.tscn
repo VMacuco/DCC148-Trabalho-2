@@ -13,23 +13,22 @@ size = Vector2(66, 28)
 script = ExtResource("1_ht6ks")
 velocidade = 240.0
 velocidade_retorno = 100.0
-pausa_no_inicio = null
-pausa_no_final = null
 
 [node name="Trilho" type="Line2D" parent="." unique_id=1179415043]
 z_index = -1
+points = PackedVector2Array(0, 0, 160, 0)
 width = 3.0
 default_color = Color(0.22745098, 0.22745098, 0.23529412, 1)
 
 [node name="Inicio" type="Sprite2D" parent="." unique_id=51225453]
 z_index = -1
-position = Vector2(48, -25)
 texture = ExtResource("1_8wyki")
 region_enabled = true
 region_rect = Rect2(52.306213, 291.4663, 6.9333496, 6.4000244)
 
 [node name="Final" type="Sprite2D" parent="." unique_id=1290261298]
 z_index = -1
+position = Vector2(160, 0)
 texture = ExtResource("1_8wyki")
 region_enabled = true
 region_rect = Rect2(51.614746, 291.18878, 7.5163956, 6.304077)

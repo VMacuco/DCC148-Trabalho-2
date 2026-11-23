@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://btmqndpqudj3t" path="res://Assests/Targets/Pendulum.png" id="6_pea3c"]
 [ext_resource type="PackedScene" uid="uid://lhbkhybl8vux" path="res://Scenes/checkpoint.tscn" id="8_e7xkp"]
 [ext_resource type="PackedScene" uid="uid://cd4dun8rhiawv" path="res://Scenes/livro_da_fase.tscn" id="11_bajru"]
+[ext_resource type="FontFile" uid="uid://di5qx4brne77o" path="res://Assests/Fonts/VT323/VT323-Regular.ttf" id="11_v5h1b"]
 [ext_resource type="Texture2D" uid="uid://cbplx6lhdgprh" path="res://Assests/Livros/Morrigan.png" id="12_8u3pr"]
 [ext_resource type="AudioStream" uid="uid://bt8apbrdln0fy" path="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/WAV/Sneaky .wav" id="13_5ywyi"]
 
@@ -646,6 +647,7 @@ sources/0 = SubResource("TileSetAtlasSource_6csy8")
 [node name="mapa_1" type="Node2D" unique_id=1927816766]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1226265843]
+z_index = -2
 scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(768, 416)
 repeat_times = 3
@@ -655,6 +657,7 @@ texture = ExtResource("1_8a080")
 centered = false
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=464556909]
+z_index = -2
 scroll_scale = Vector2(0.8, 1)
 scroll_offset = Vector2(394, -210)
 
@@ -669,7 +672,7 @@ tile_set = SubResource("TileSet_e7x7s")
 script = ExtResource("2_kxodj")
 
 [node name="CharacterBody2D" parent="." unique_id=852017234 groups=["Player"] instance=ExtResource("3_pea3c")]
-position = Vector2(9653, -734)
+position = Vector2(-2, 4)
 
 [node name="Whip_Target2" parent="." unique_id=2015582509 instance=ExtResource("5_pea3c")]
 position = Vector2(1285, -177)
@@ -689,17 +692,12 @@ collision_layer = 1
 type = 1
 texture = ExtResource("6_pea3c")
 
-[node name="Whip_Target5" parent="." unique_id=981130060 instance=ExtResource("5_pea3c")]
-visible = false
-position = Vector2(2531, -75)
-texture = ExtResource("6_fv3l0")
-
 [node name="Whip_Target6" parent="." unique_id=917347892 instance=ExtResource("5_pea3c")]
 position = Vector2(2443, -293)
 texture = ExtResource("6_fv3l0")
 
 [node name="Whip_Target7" parent="." unique_id=2004439970 instance=ExtResource("5_pea3c")]
-position = Vector2(2443, -156)
+position = Vector2(2429, -159)
 texture = ExtResource("6_fv3l0")
 
 [node name="Whip_Target8" parent="." unique_id=1738802460 instance=ExtResource("5_pea3c")]
@@ -727,38 +725,26 @@ texture = ExtResource("6_pea3c")
 [node name="TransportPlataform" parent="." unique_id=1466571712 instance=ExtResource("4_fv3l0")]
 position = Vector2(4522, -274)
 deslocamento = Vector2(300, 75)
-pausa_no_inicio = 0.2
-pausa_no_final = 0.2
 
 [node name="TransportPlataform2" parent="." unique_id=694534087 instance=ExtResource("4_fv3l0")]
 position = Vector2(4021, -562)
 deslocamento = Vector2(0, 200)
-pausa_no_inicio = 0.2
-pausa_no_final = 0.2
 
 [node name="TransportPlataform3" parent="." unique_id=1678657679 instance=ExtResource("4_fv3l0")]
 position = Vector2(3732, -368)
 deslocamento = Vector2(0, -200)
-pausa_no_inicio = 0.2
-pausa_no_final = 0.2
 
 [node name="TransportPlataform4" parent="." unique_id=1510702591 instance=ExtResource("4_fv3l0")]
 position = Vector2(3410, -295)
 deslocamento = Vector2(260, 0)
-pausa_no_inicio = 0.2
-pausa_no_final = 0.2
 
 [node name="TransportPlataform5" parent="." unique_id=637568025 instance=ExtResource("4_fv3l0")]
 position = Vector2(5179, -284)
 deslocamento = Vector2(400, -250)
-pausa_no_inicio = 0.2
-pausa_no_final = 0.2
 
 [node name="TransportPlataform6" parent="." unique_id=364552030 instance=ExtResource("4_fv3l0")]
 position = Vector2(7658, -930)
 deslocamento = Vector2(250, 400)
-pausa_no_inicio = 0.2
-pausa_no_final = 0.2
 
 [node name="Checkpoint" parent="." unique_id=1368806125 node_paths=PackedStringArray("spawnPoint") instance=ExtResource("8_e7xkp")]
 position = Vector2(2285, -25)
@@ -801,27 +787,30 @@ SavePoint = true
 spawnPoint = NodePath("Marker2D")
 
 [node name="CollisionShape2D" parent="Checkpoint4" index="0" unique_id=1389019065]
-visible = false
 position = Vector2(6.9999995, -88.99999)
 scale = Vector2(10, 10)
 
 [node name="Marker2D" type="Marker2D" parent="Checkpoint4" unique_id=497226179]
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1309986719]
-offset_left = -683.0
-offset_top = 28.0
-offset_right = -460.0
-offset_bottom = 105.0
+texture_repeat = 1
+offset_left = -689.0
+offset_top = -13.0
+offset_right = -413.0
+offset_bottom = 44.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_e7xkp")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=593915439]
+texture_filter = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=445286527]
+texture_filter = 1
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "Beginning or end, the only way out is through."
+theme_override_fonts/font = ExtResource("11_v5h1b")
+theme_override_font_sizes/font_size = 14
+text = "My dear Maeve, the only way out is through."
 
 [node name="Livro da Fase" parent="." unique_id=78483132 instance=ExtResource("11_bajru")]
 position = Vector2(9482, -735)

@@ -1,8 +1,11 @@
 extends TileMapLayer
 
-@export_flags_2d_physics var layer_dano: int = 64 # 64 = Layer 7 (Mask da Hurtbox do Player)
-@export var indice_physics_layer_espinho: int = 1 # Element 1 do TileSet
+@export_flags_2d_physics var layer_dano: int = 64 # layer 7 (Mask da Hurtbox do Player)
+@export var indice_physics_layer_espinho: int = 1 # o element 1 tem o molde pra fisica
 
+# este código cria uma area2d para os espinhos marcados no tileset 
+# ficarem compatíveis e interagirem corretamente com a lógica de
+# player 
 func _ready() -> void:
 	var area_espinhos := Area2D.new()
 	area_espinhos.name = "AreaEspinhos"
@@ -19,7 +22,8 @@ func _ready() -> void:
 		if qtd_poligonos == 0:
 			continue
 			
-		# Respeita espelhamento (flip_h / flip_v) e rotação feitos na pintura do mapa
+		# permite usar as ferramentas de pintura mantendo a lógica do espinho
+		# coerente
 		var rot_flip := Transform2D.IDENTITY
 		if is_cell_flipped_h(celula):
 			rot_flip = rot_flip.scaled(Vector2(-1, 1))
