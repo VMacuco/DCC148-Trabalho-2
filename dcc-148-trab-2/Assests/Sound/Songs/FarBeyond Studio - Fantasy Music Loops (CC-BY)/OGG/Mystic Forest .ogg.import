@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dh8raiep718s4"
+path="res://.godot/imported/Mystic Forest .ogg-4e69649c38f7f94632ebb2e07fc6651d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/OGG/Mystic Forest .ogg"
+dest_files=["res://.godot/imported/Mystic Forest .ogg-4e69649c38f7f94632ebb2e07fc6651d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc1eidw23q2ab"
-path="res://.godot/imported/Grass_background_1.png-b87f2e5218b0e25687f6665d841e4abb.ctex"
+uid="uid://c2qoj13gu3dve"
+path="res://.godot/imported/brush.png-ef5e80042648d97d32a6ebc2c9c90d31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Tileset/Final/Grass_background_1.png"
-dest_files=["res://.godot/imported/Grass_background_1.png-b87f2e5218b0e25687f6665d841e4abb.ctex"]
+source_file="res://Assests/Tileset/Mapa 1/brush.png"
+dest_files=["res://.godot/imported/brush.png-ef5e80042648d97d32a6ebc2c9c90d31.ctex"]
 
 [params]
 

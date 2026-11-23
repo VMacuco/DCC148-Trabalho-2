@@ -8,6 +8,12 @@ extends Area2D
 		if is_node_ready():
 			label.text = texto
 
+@export var largura_max := 220.0:
+	set(value):
+		largura_max = value
+		if is_node_ready():
+			label.custom_minimum_size.x = largura_max
+
 @export var balao_offset_y := -40.0   # distância acima do centro da zona
 @export var fade_time := 0.2
 
@@ -25,6 +31,8 @@ func _ready() -> void:
 
 	balao.modulate.a = 0.0
 	balao.visible = false
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.custom_minimum_size.x = largura_max
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 

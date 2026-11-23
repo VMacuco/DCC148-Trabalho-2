@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2qoj13gu3dve"
-path="res://.godot/imported/brush.png-6610f3b29a97e6620f389fb40d855045.ctex"
+uid="uid://cloamdambvrnt"
+path="res://.godot/imported/Circulo Fase 3.png-2fe0c93f978b243a15ee0c35defb3683.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Tileset/Final/brush.png"
-dest_files=["res://.godot/imported/brush.png-6610f3b29a97e6620f389fb40d855045.ctex"]
+source_file="res://Assests/Extras/Circulo Fase 3.png"
+dest_files=["res://.godot/imported/Circulo Fase 3.png-2fe0c93f978b243a15ee0c35defb3683.ctex"]
 
 [params]
 

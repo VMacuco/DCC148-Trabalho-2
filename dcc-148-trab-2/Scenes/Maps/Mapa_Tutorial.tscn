@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bh5aouxxta78b" path="res://Assests/Targets/Hook.png" id="10_mdiyn"]
 [ext_resource type="PackedScene" uid="uid://lhbkhybl8vux" path="res://Scenes/checkpoint.tscn" id="11_q3sph"]
 [ext_resource type="PackedScene" uid="uid://chtkfil3xohh8" path="res://Scenes/placa_tutorial.tscn" id="14_4bj2d"]
+[ext_resource type="AudioStream" uid="uid://bw2fahtoyfvw1" path="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/OGG/Enchanted Woods.ogg" id="15_5a0mu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfidq"]
 texture = ExtResource("6_li5sa")
@@ -413,7 +414,7 @@ size = Vector2(240, 95.99999)
 size = Vector2(198, 383)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nvk2"]
-size = Vector2(1183, 95)
+size = Vector2(1500, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6x1h"]
 size = Vector2(1279, 145)
@@ -636,7 +637,7 @@ collision_layer = 64
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=976614215]
-position = Vector2(48.390137, -6.700012)
+position = Vector2(-110.10986, -6.700012)
 shape = SubResource("RectangleShape2D_4nvk2")
 
 [node name="Area2D6" type="Area2D" parent="." unique_id=996768851]
@@ -688,7 +689,7 @@ position = Vector2(2, -10)
 scale = Vector2(4, 2)
 
 [node name="Texto" parent="PlacaTutorial_dash/Balão/MarginContainer" parent_id_path=PackedInt32Array(651980063, 269587526) index="0" unique_id=1583770339]
-text = "Pressine [shift] para avançar para o lado."
+text = "Pressine [shift] para ."
 
 [node name="PlacaTutorial_dash2" parent="." unique_id=1334093033 instance=ExtResource("14_4bj2d")]
 position = Vector2(830, 326)
@@ -777,6 +778,10 @@ scale = Vector2(6, 4)
 
 [node name="Texto" parent="PlacaTutorial4/Balão/MarginContainer" parent_id_path=PackedInt32Array(411433083, 269587526) index="0" unique_id=1583770339]
 text = "Aperte [A,D] para Andar."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1641747836]
+stream = ExtResource("15_5a0mu")
+autoplay = true
 
 [editable path="Checkpoint"]
 [editable path="Checkpoint2"]

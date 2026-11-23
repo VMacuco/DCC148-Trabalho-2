@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcadgowhhn8bs"
-path="res://.godot/imported/Tiles.png-6362bb5cb376c6addcbbbc0c3514b8e5.ctex"
+uid="uid://54tjexaihwth"
+path="res://.godot/imported/Porta2.png-299b2d674ffffb2ea817e2d3ab6bb3e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Tileset/Final/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-6362bb5cb376c6addcbbbc0c3514b8e5.ctex"]
+source_file="res://Assests/Extras/Porta2.png"
+dest_files=["res://.godot/imported/Porta2.png-299b2d674ffffb2ea817e2d3ab6bb3e7.ctex"]
 
 [params]
 

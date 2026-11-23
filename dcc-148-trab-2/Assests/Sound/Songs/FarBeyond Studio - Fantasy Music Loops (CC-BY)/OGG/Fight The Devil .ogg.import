@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b67x7x7wbj3gf"
+path="res://.godot/imported/Fight The Devil .ogg-9c73d9d59112db8170fd5c79825da4cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/OGG/Fight The Devil .ogg"
+dest_files=["res://.godot/imported/Fight The Devil .ogg-9c73d9d59112db8170fd5c79825da4cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
