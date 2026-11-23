@@ -14,8 +14,8 @@ enum WhipState { NONE, FIRING, PULLING, SWINGING }
 @export var SWING_KICK := 150.0         
 @export var SWING_RELEASE_LOCK := 0.2   
 @export_flags_2d_physics var WHIP_MASK := 5  # layers 1 (mundo) + 3 (alvos)
-@export var WHIP_COOLDOWN : float = 0.6
-@export var WHIP_END_COOLDOWN : float = 0.3
+@export var WHIP_COOLDOWN : float = 0.3
+@export var WHIP_END_COOLDOWN : float = 0.1
 @export var SWING_MIN_DISTANCE : float = 20.0
 
 var whip_state := WhipState.NONE
@@ -172,7 +172,7 @@ func start_dash() -> void:
 	dash_blocked = true
 	dash_dir = facing
 	wall_jump_lock = 0.0
-	Hurtbox.set_deferred("disable", true)
+	Hurtbox.set_deferred("disabled", true)
 	ColisionBox.set_deferred("disabled", true)
 	Colision_dash.set_deferred("disabled", false)
 	Collision_Cast.set_deferred("enabled", true)
@@ -182,12 +182,14 @@ func start_dash() -> void:
 	
 	while Collision_Cast.is_colliding():
 		await get_tree().create_timer(DASH_TIME/2).timeout
+		if is_on_wall() or absf(get_real_velocity().x) < 1.0:
+			break
 
 	is_dashing = false
 	ColisionBox.set_deferred("disabled", false)
 	Colision_dash.set_deferred("disabled", true)
 	Collision_Cast.set_deferred("enabled", false)
-	Hurtbox.set_deferred("disable", true)
+	Hurtbox.set_deferred("disabled", false)
 	dash_cooldown_timer = DASH_COOLDOWN
 	velocity.x = 0.0
 
@@ -209,6 +211,10 @@ func handle_wall_slide(direction: float, delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, WALL_SPEED, WALL_FRICTION * delta)
 
+
+func reset_dash() -> void:
+	dash_cooldown_timer = 0.0
+	dash_blocked = false
 
 func wall_jump() -> void:
 	velocity.y = JUMP_VELOCITY
@@ -255,6 +261,8 @@ func updade_whip_shoot(delta:float)->void:
 		if c is Whip_Target and c.type == Whip_Target.Type.GRAPPLE:
 			whip_target = c
 			whip_state = WhipState.PULLING
+			if c.resets_dash:
+				reset_dash()
 			return
 		end_whip()
 		return

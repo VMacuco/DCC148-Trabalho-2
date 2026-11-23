@@ -710,7 +710,7 @@ size = Vector2(19, 27)
 collision_layer = 2
 script = ExtResource("1_ft8w5")
 
-[node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=856813863]
+[node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=856813863 groups=["Player"]]
 position = Vector2(2, -8.5)
 scale = Vector2(1, 0.953125)
 sprite_frames = SubResource("SpriteFrames_h0jfm")
