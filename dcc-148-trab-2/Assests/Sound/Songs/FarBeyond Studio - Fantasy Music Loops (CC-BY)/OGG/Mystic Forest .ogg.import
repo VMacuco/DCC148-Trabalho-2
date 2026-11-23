@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Mystic Forest .ogg-4e69649c38f7f94632ebb2e07f
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

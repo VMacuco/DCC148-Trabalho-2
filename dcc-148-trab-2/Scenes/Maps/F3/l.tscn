@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1gof0lbq83lp" path="res://Scenes/Player/Player.tscn" id="4_q8jmo"]
 [ext_resource type="PackedScene" uid="uid://cd4dun8rhiawv" path="res://Scenes/livro_da_fase.tscn" id="5_i6yoi"]
 [ext_resource type="Texture2D" uid="uid://ddsvu10ohy5uy" path="res://Assests/Livros/Grimório Gigax.png" id="6_ndxk5"]
+[ext_resource type="AudioStream" uid="uid://dh8raiep718s4" path="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/OGG/Mystic Forest .ogg" id="7_ndxk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8jmo"]
 texture = ExtResource("2_7iymq")
@@ -222,5 +223,9 @@ position = Vector2(758.015, 9.460083)
 [node name="Livro da Fase" parent="CharacterBody2D" unique_id=78483132 instance=ExtResource("5_i6yoi")]
 position = Vector2(-151.01501, -2.460083)
 texture = ExtResource("6_ndxk5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=91028205]
+stream = ExtResource("7_ndxk5")
+autoplay = true
 
 [editable path="Checkpoint"]

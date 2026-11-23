@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://btmqndpqudj3t" path="res://Assests/Targets/Pendulum.png" id="6_npbeh"]
 [ext_resource type="PackedScene" uid="uid://lhbkhybl8vux" path="res://Scenes/checkpoint.tscn" id="8_af4fc"]
 [ext_resource type="PackedScene" uid="uid://b2risrd75cg2w" path="res://Scenes/Maps/circulo.tscn" id="9_5jxy6"]
+[ext_resource type="AudioStream" uid="uid://dh8raiep718s4" path="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/OGG/Mystic Forest .ogg" id="10_bcw34"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npbeh"]
 texture = ExtResource("2_cl5di")
@@ -352,6 +353,10 @@ position = Vector2(-3.0004883, 3.171112)
 
 [node name="Circulo" parent="." unique_id=2006065111 instance=ExtResource("9_5jxy6")]
 position = Vector2(-23, 96)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=778859385]
+stream = ExtResource("10_bcw34")
+autoplay = true
 
 [editable path="Checkpoint_Entrada"]
 [editable path="Checkpoint"]
