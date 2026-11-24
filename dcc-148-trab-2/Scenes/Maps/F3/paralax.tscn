@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c8nvcnbuj46yl"]
+
+[ext_resource type="Texture2D" uid="uid://cd85bj33uivxp" path="res://Assests/Tileset/Floresta Noite/background_0.png" id="1_dkt7v"]
+[ext_resource type="Texture2D" uid="uid://d1e1fenditf4t" path="res://Assests/Tileset/Floresta Noite/background_1.png" id="2_xo7rm"]
+[ext_resource type="Texture2D" uid="uid://b1q2dbqxa4aj3" path="res://Assests/Tileset/Floresta Noite/background_2.png" id="3_ils1j"]
+
+[node name="Paralax" type="Node" unique_id=2132499746]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=308868813]
+z_index = -4
+scroll_scale = Vector2(0, 1)
+scroll_offset = Vector2(859, 268)
+repeat_size = Vector2(2016, 0)
+repeat_times = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2047092175]
+scale = Vector2(7, 7)
+texture = ExtResource("1_dkt7v")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=899201644]
+z_index = -4
+scroll_scale = Vector2(0.1, 1)
+scroll_offset = Vector2(859, 268)
+repeat_size = Vector2(2016, 0)
+repeat_times = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1393399396]
+scale = Vector2(7, 7)
+texture = ExtResource("2_xo7rm")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=568653397]
+z_index = -4
+scroll_scale = Vector2(0.2, 1)
+scroll_offset = Vector2(859, 268)
+repeat_size = Vector2(2016, 0)
+repeat_times = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=467775837]
+scale = Vector2(7, 7)
+texture = ExtResource("3_ils1j")

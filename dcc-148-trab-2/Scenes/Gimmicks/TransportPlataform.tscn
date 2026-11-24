@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bpmssstydcwug"]
+
+[ext_resource type="Texture2D" uid="uid://bcadgowhhn8bs" path="res://Assests/Tileset/Mapa 1/Tiles.png" id="1_8wyki"]
+[ext_resource type="Script" uid="uid://bc34v143j3y4m" path="res://Scenes/Gimmicks/transport_plataform.gd" id="1_ht6ks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6tdp"]
+size = Vector2(60, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0ua7"]
+size = Vector2(66, 28)
+
+[node name="TransportPlataform" type="Node2D" unique_id=1466571712]
+script = ExtResource("1_ht6ks")
+velocidade = 240.0
+velocidade_retorno = 100.0
+
+[node name="Trilho" type="Line2D" parent="." unique_id=1179415043]
+z_index = -1
+points = PackedVector2Array(0, 0, 160, 0)
+width = 3.0
+default_color = Color(0.22745098, 0.22745098, 0.23529412, 1)
+
+[node name="Inicio" type="Sprite2D" parent="." unique_id=51225453]
+z_index = -1
+texture = ExtResource("1_8wyki")
+region_enabled = true
+region_rect = Rect2(52.306213, 291.4663, 6.9333496, 6.4000244)
+
+[node name="Final" type="Sprite2D" parent="." unique_id=1290261298]
+z_index = -1
+position = Vector2(160, 0)
+texture = ExtResource("1_8wyki")
+region_enabled = true
+region_rect = Rect2(51.614746, 291.18878, 7.5163956, 6.304077)
+
+[node name="Plataform" type="AnimatableBody2D" parent="." unique_id=66047964]
+
+[node name="Sprite2D" type="Sprite2D" parent="Plataform" unique_id=843591038]
+texture = ExtResource("1_8wyki")
+region_enabled = true
+region_rect = Rect2(82.82744, 249.4417, 60.607742, 20.805649)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataform" unique_id=724719752]
+shape = SubResource("RectangleShape2D_g6tdp")
+
+[node name="Trigger" type="Area2D" parent="Plataform" unique_id=1670376397]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataform/Trigger" unique_id=923515393]
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_b0ua7")
+
+[connection signal="body_entered" from="Plataform/Trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_exited" from="Plataform/Trigger" to="." method="_on_trigger_body_exited"]

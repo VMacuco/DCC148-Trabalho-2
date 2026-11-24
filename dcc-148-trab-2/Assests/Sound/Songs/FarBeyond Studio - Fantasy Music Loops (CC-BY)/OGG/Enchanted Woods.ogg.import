@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bw2fahtoyfvw1"
+path="res://.godot/imported/Enchanted Woods.ogg-667c6cb9bf15ba798224d15973f0c968.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/OGG/Enchanted Woods.ogg"
+dest_files=["res://.godot/imported/Enchanted Woods.ogg-667c6cb9bf15ba798224d15973f0c968.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

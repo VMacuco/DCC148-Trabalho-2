@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://bgpg258d3gh7r"]
+
+[ext_resource type="Script" uid="uid://dvxof64jxf4fo" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_445kf"]
+[ext_resource type="Texture2D" uid="uid://b81y7coj8tc5d" path="res://Assests/Menus/Sprite Sheet/Open/Open_book.png" id="2_bq65x"]
+[ext_resource type="Texture2D" uid="uid://cd85bj33uivxp" path="res://Assests/Tileset/Floresta Noite/background_0.png" id="2_dpe20"]
+[ext_resource type="Texture2D" uid="uid://d1e1fenditf4t" path="res://Assests/Tileset/Floresta Noite/background_1.png" id="3_lt8cq"]
+[ext_resource type="Texture2D" uid="uid://b1q2dbqxa4aj3" path="res://Assests/Tileset/Floresta Noite/background_2.png" id="4_g6ism"]
+[ext_resource type="Texture2D" uid="uid://n0s6viaj0adw" path="res://Assests/Menus/Fita_text_paused.png" id="4_lt8cq"]
+[ext_resource type="FontFile" uid="uid://da5y0lamx7bre" path="res://Fonts/UncialAntiqua-Regular.ttf" id="5_g6ism"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv2qh"]
+atlas = ExtResource("2_bq65x")
+region = Rect2(829, 628, 246, 183)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv2qh"]
+bg_color = Color(0.8117647, 0.6784314, 0.4862745, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MainMenu" type="Control" unique_id=953884381]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_445kf")
+
+[node name="Background" type="Control" parent="." unique_id=1508094528]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1419745097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dpe20")
+
+[node name="TextureRect2" type="TextureRect" parent="Background" unique_id=1617629072]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lt8cq")
+
+[node name="TextureRect3" type="TextureRect" parent="Background" unique_id=1079684603]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_g6ism")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1712406251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -390.0
+offset_top = -290.0
+offset_right = 390.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tomo" type="TextureRect" parent="CenterContainer" unique_id=960388293]
+custom_minimum_size = Vector2(780, 580)
+layout_mode = 2
+texture = SubResource("AtlasTexture_vv2qh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MensagemCarta" type="RichTextLabel" parent="CenterContainer/Tomo" unique_id=1805451452]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 100.0
+offset_right = 345.0
+offset_bottom = 460.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_g6ism")
+text = "Maeve, minha amada sobrinha, eu sei que concordei em lhe ensinar magia, mas ocorreu um pequeno equivoco da minha parte... Perdi meus grimórios arcanos de conhecimento infinito. Sua mãe já lhe ensinou o Chicote Arcano, então, recuperar meus tomos será sua primeira tarefa como minha aprendiz.
+
+Beijos e boa sorte!"
+autowrap_mode = 2
+
+[node name="MenuContent" type="VBoxContainer" parent="CenterContainer/Tomo" unique_id=124134344]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 130.0
+offset_right = 725.0
+offset_bottom = 350.0
+theme_override_constants/separation = -12
+alignment = 1
+
+[node name="MenuBannerSlot" type="Control" parent="CenterContainer/Tomo/MenuContent" unique_id=1239674972]
+custom_minimum_size = Vector2(0, 105)
+layout_mode = 2
+
+[node name="TitleBanner" type="TextureRect" parent="CenterContainer/Tomo/MenuContent/MenuBannerSlot" unique_id=2017720002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -98.0
+offset_right = 38.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lt8cq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CenterContainer/Tomo/MenuContent/MenuBannerSlot/TitleBanner" unique_id=887325010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g6ism")
+theme_override_font_sizes/font_size = 20
+text = "		Os tomos
+de Jurandir Mortari"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonSlot" type="VBoxContainer" parent="CenterContainer/Tomo/MenuContent" unique_id=168948781]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Iniciar" type="Button" parent="CenterContainer/Tomo/MenuContent/ButtonSlot" unique_id=1117390851]
+custom_minimum_size = Vector2(86, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g6ism")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_vv2qh")
+text = "Iniciar"
+
+[node name="Credits" type="Button" parent="CenterContainer/Tomo/MenuContent/ButtonSlot" unique_id=2111050085]
+custom_minimum_size = Vector2(86, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g6ism")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_vv2qh")
+text = "Créditos"
+
+[node name="Sair" type="Button" parent="CenterContainer/Tomo/MenuContent/ButtonSlot" unique_id=1364757658]
+custom_minimum_size = Vector2(86, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g6ism")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_vv2qh")
+text = "Sair"
+
+[connection signal="pressed" from="CenterContainer/Tomo/MenuContent/ButtonSlot/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="CenterContainer/Tomo/MenuContent/ButtonSlot/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CenterContainer/Tomo/MenuContent/ButtonSlot/Sair" to="." method="_on_sair_pressed"]

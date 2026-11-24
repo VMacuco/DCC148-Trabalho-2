@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://s532akptjfex"]
+
+[ext_resource type="Texture2D" uid="uid://qjbs7c7sqv0h" path="res://Assests/Menus/Sprite Sheet/Close/Close_book.png" id="1_glsdx"]
+[ext_resource type="Texture2D" uid="uid://b81y7coj8tc5d" path="res://Assests/Menus/Sprite Sheet/Open/Open_book.png" id="1_ujk3g"]
+[ext_resource type="Script" uid="uid://ckb4q2t3re3ip" path="res://Scenes/Menus/Pause/pause_menu_animation.gd" id="3_cg2jv"]
+[ext_resource type="FontFile" uid="uid://da5y0lamx7bre" path="res://Fonts/UncialAntiqua-Regular.ttf" id="4_0o8h8"]
+[ext_resource type="Texture2D" uid="uid://n0s6viaj0adw" path="res://Assests/Menus/Fita_text_paused.png" id="4_v8efm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tbe0"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(0, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak1uw"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(272, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fnft"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(544, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk2ig"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(816, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r25h0"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(0, 272, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmr3k"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(272, 272, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35rq1"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(544, 272, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip6of"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(816, 272, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esp30"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(0, 544, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk3jq"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(272, 544, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw7vi"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(544, 544, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k71t"]
+atlas = ExtResource("1_glsdx")
+region = Rect2(816, 544, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glsdx"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(0, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg2jv"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(272, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o8h8"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(544, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8efm"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(816, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t68yr"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(0, 272, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g4sq"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(272, 272, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_allfa"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(544, 272, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxw3l"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(816, 272, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o875f"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(0, 544, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2piw"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(272, 544, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6rbp"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(544, 544, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i63qg"]
+atlas = ExtResource("1_ujk3g")
+region = Rect2(816, 544, 272, 272)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eq8l8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tbe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak1uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fnft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk2ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r25h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmr3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35rq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip6of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esp30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk3jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw7vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k71t")
+}],
+"loop": 0,
+"name": &"CloseGrimory",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glsdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg2jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o8h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8efm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t68yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g4sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_allfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxw3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o875f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2piw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6rbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i63qg")
+}],
+"loop": 0,
+"name": &"OpenGrimory",
+"speed": 15.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o8h8"]
+bg_color = Color(0.8117647, 0.6784314, 0.4862745, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Pause" type="Node2D" unique_id=287135491]
+process_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=238158235]
+
+[node name="PauseMenuAnimation" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=450007969]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_eq8l8")
+animation = &"OpenGrimory"
+script = ExtResource("3_cg2jv")
+
+[node name="PauseMenu" type="VBoxContainer" parent="CanvasLayer/PauseMenuAnimation" unique_id=2072162048]
+visible = false
+offset_left = 7.0
+offset_top = -4.0
+offset_right = 110.0
+offset_bottom = 66.0
+theme_override_constants/separation = -12
+alignment = 1
+
+[node name="PauseBannerSlot" type="Control" parent="CanvasLayer/PauseMenuAnimation/PauseMenu" unique_id=515748542]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="PauseBanner" type="TextureRect" parent="CanvasLayer/PauseMenuAnimation/PauseMenu/PauseBannerSlot" unique_id=1798041472]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -38.0
+offset_right = 28.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_v8efm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenuAnimation/PauseMenu/PauseBannerSlot/PauseBanner" unique_id=251374165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_0o8h8")
+theme_override_font_sizes/font_size = 12
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonSlot" type="VBoxContainer" parent="CanvasLayer/PauseMenuAnimation/PauseMenu" unique_id=1111431600]
+layout_mode = 2
+
+[node name="Continuar" type="Button" parent="CanvasLayer/PauseMenuAnimation/PauseMenu/ButtonSlot" unique_id=1706098616]
+custom_minimum_size = Vector2(86, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_0o8h8")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_0o8h8")
+text = "Continuar"
+
+[node name="Sair" type="Button" parent="CanvasLayer/PauseMenuAnimation/PauseMenu/ButtonSlot" unique_id=1650542422]
+custom_minimum_size = Vector2(86, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_0o8h8")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_0o8h8")
+text = "Sair"
+
+[connection signal="animation_finished" from="CanvasLayer/PauseMenuAnimation" to="CanvasLayer/PauseMenuAnimation" method="_on_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/PauseMenuAnimation/PauseMenu/ButtonSlot/Continuar" to="CanvasLayer/PauseMenuAnimation" method="_on_continuar_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenuAnimation/PauseMenu/ButtonSlot/Sair" to="CanvasLayer/PauseMenuAnimation" method="_on_sair_pressed"]
