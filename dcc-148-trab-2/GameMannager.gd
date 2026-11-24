@@ -73,3 +73,7 @@ func _respawn()->void: # não está sendo mais usada
 func _change_level() -> void:
 	current_level += 1
 	LevelMannager.change_level(current_level)
+
+func start_game() -> void:
+	current_level = 1
+	LevelMannager.change_level(current_level)
