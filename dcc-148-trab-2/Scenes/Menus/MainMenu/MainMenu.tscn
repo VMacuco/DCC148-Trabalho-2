@@ -172,4 +172,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vv2qh")
 text = "Sair"
 
 [connection signal="pressed" from="CenterContainer/Tomo/MenuContent/ButtonSlot/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="CenterContainer/Tomo/MenuContent/ButtonSlot/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CenterContainer/Tomo/MenuContent/ButtonSlot/Sair" to="." method="_on_sair_pressed"]
