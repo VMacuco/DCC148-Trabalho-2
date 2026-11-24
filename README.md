@@ -1,6 +1,6 @@
 # DCC148-Trabalho-2
 
-### alunos:
+### Alunos:
 Vinícius Macuco Leite Carvalhaes - 202365213AC
 
 Guilherme Monteiro de Souza - 202165562c
