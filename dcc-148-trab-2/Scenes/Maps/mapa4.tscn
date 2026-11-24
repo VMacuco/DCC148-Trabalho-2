@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cynuiblx58fma" path="res://Assests/Tileset/Pixel Woods Asset Pack/Backgrounds/BG_2/Woods 1.png" id="20_4fe8l"]
 [ext_resource type="PackedScene" uid="uid://cd4dun8rhiawv" path="res://Scenes/livro_da_fase.tscn" id="25_nulc6"]
 [ext_resource type="Texture2D" uid="uid://bb30kdhikgjk1" path="res://Assests/Livros/Livro das Lendas.png" id="26_2kjtp"]
+[ext_resource type="AudioStream" uid="uid://b67x7x7wbj3gf" path="res://Assests/Sound/Songs/FarBeyond Studio - Fantasy Music Loops (CC-BY)/OGG/Fight The Devil .ogg" id="27_2kjtp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcebo"]
 size = Vector2(48.599995, 20)
@@ -15642,7 +15643,6 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 1
 type = 1
 texture = ExtResource("4_dcuon")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15652,7 +15652,6 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 1
 type = 1
 texture = ExtResource("4_dcuon")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15662,7 +15661,6 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 1
 type = 1
 texture = ExtResource("4_dcuon")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15681,7 +15679,6 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 1
 type = 1
 texture = ExtResource("4_dcuon")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15689,7 +15686,6 @@ track_range = 400.0
 position = Vector2(877, -424)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15712,7 +15708,6 @@ track_range = 400.0
 position = Vector2(2526, -940)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15720,7 +15715,6 @@ track_range = 400.0
 position = Vector2(3122, -899)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15728,7 +15722,6 @@ track_range = 400.0
 position = Vector2(3320, -950)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15736,7 +15729,6 @@ track_range = 400.0
 position = Vector2(2940, -950)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15744,7 +15736,6 @@ track_range = 400.0
 position = Vector2(201, -588)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15752,7 +15743,6 @@ track_range = 400.0
 position = Vector2(-208, -466)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15760,7 +15750,6 @@ track_range = 400.0
 position = Vector2(-550, -653)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15768,7 +15757,6 @@ track_range = 400.0
 position = Vector2(-550, -744)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -15776,7 +15764,6 @@ track_range = 400.0
 position = Vector2(-552, -839)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_eu4hw")
-resets_dash = null
 sprite_angle_offset = 0.0
 track_range = 400.0
 
@@ -16218,6 +16205,12 @@ tile_set = SubResource("TileSet_ydnqi")
 [node name="Livro da Fase" parent="." unique_id=78483132 instance=ExtResource("25_nulc6")]
 position = Vector2(3840, -859)
 texture = ExtResource("26_2kjtp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1135207904]
+stream = ExtResource("27_2kjtp")
+autoplay = true
+bus = &"Music"
+parameters/looping = false
 
 [editable path="Checkpoint"]
 [editable path="Checkpoint2"]
