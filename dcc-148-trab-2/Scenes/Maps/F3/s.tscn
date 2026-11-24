@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c1fnbyqwbkhgf"]
 
-[ext_resource type="PackedScene" uid="uid://c8nvcnbuj46yl" path="res://Scenes/Maps/F3/paralax.tscn" id="1_a6djf"]
+[ext_resource type="PackedScene" uid="uid://c8nvcnbuj46yl" path="res://Scenes/Maps/f3/paralax.tscn" id="1_a6djf"]
 [ext_resource type="Texture2D" uid="uid://bj4t6fantwl6t" path="res://Assests/Tileset/Floresta Noite/tileset.png" id="2_ejp1b"]
 [ext_resource type="PackedScene" uid="uid://b37mtu8ilfgs0" path="res://Scenes/Maps/porta.tscn" id="3_onmi5"]
 [ext_resource type="PackedScene" uid="uid://lhbkhybl8vux" path="res://Scenes/checkpoint.tscn" id="4_1eepl"]
