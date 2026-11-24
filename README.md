@@ -8,6 +8,7 @@ Ryan Carlos dos Reis Moreira - 202265089AB
 
 ### Controles:
 wasd: movimentação
+
 setas: movimenta sutilmente a câmera
 espaço: pula
 botao esquerdo mouse: ativa os ganchos/pêndulos
