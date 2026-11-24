@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://dfc6knsfldk37"]
+
+[ext_resource type="Texture2D" uid="uid://cd85bj33uivxp" path="res://Assests/Tileset/Floresta Noite/background_0.png" id="1_kgueh"]
+[ext_resource type="Texture2D" uid="uid://d1e1fenditf4t" path="res://Assests/Tileset/Floresta Noite/background_1.png" id="2_5aly1"]
+[ext_resource type="Texture2D" uid="uid://b1q2dbqxa4aj3" path="res://Assests/Tileset/Floresta Noite/background_2.png" id="3_m6wbn"]
+[ext_resource type="Texture2D" uid="uid://b81y7coj8tc5d" path="res://Assests/Menus/Sprite Sheet/Open/Open_book.png" id="4_gg85o"]
+[ext_resource type="FontFile" uid="uid://da5y0lamx7bre" path="res://Fonts/UncialAntiqua-Regular.ttf" id="5_ph0xy"]
+[ext_resource type="Texture2D" uid="uid://n0s6viaj0adw" path="res://Assests/Menus/Fita_text_paused.png" id="6_w8lmu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0jfm"]
+atlas = ExtResource("4_gg85o")
+region = Rect2(811.27203, 599.5101, 275.39697, 215.15894)
+
+[node name="Créditos" type="Control" unique_id=2130834640]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2081999693]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kgueh")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=619153586]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_5aly1")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1008512563]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_m6wbn")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1188122677]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomo" type="TextureRect" parent="CenterContainer" unique_id=89181129]
+custom_minimum_size = Vector2(780, 580)
+layout_mode = 2
+texture = SubResource("AtlasTexture_h0jfm")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Tomo" unique_id=328902153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Tomo/HBoxContainer" unique_id=1535887076]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 60
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/Tomo/HBoxContainer/MarginContainer" unique_id=1549514762]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.23137255, 0.16470589, 0.101960786, 1)
+theme_override_fonts/normal_font = ExtResource("5_ph0xy")
+theme_override_fonts/bold_font = ExtResource("5_ph0xy")
+theme_override_fonts/bold_italics_font = ExtResource("5_ph0xy")
+theme_override_fonts/italics_font = ExtResource("5_ph0xy")
+theme_override_fonts/mono_font = ExtResource("5_ph0xy")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center][b]CRÉDITOS[/b][/center]
+
+[b]Criadores[/b]
+Guilherme Monteiro de Souza
+202165562C
+
+Pablo Rachid de Bem
+202365126AC
+
+Ryan Carlos dos Reis Moreira
+202265089AB
+
+Vinicius Macuco Leite Carvalhaes
+202365213AC
+
+[b]Assets criados por[/b]
+[url=https://www.patreon.com/cw/Anokolisa]Anakolisa[/url]
+[url=https://bdragon1727.itch.io/]BDragon1727[/url]
+[url=https://craftpix.net/freebies/free-animated-magic-book-pixel-art-asset-pack/]Craftpix[/url]
+[url=https://cubic-tree.itch.io/]Cubic Tree[/url]
+[url=https://legnops.itch.io/]Legnops[/url]
+[url=https://nectanebo.itch.io/]Nectanebo[/url]
+[url=https://szadiart.itch.io/]Szadi art[/url]
+[url=https://trixelized.itch.io/]Trixie[/url]
+Vinícius Macuco Leite Carvalhaes
+
+[b]Músicas e Sound Effects[/b]
+[url=https://farbeyond-studio.itch.io/]FarBeyond Studio[/url]
+[url=https://leohpaz.itch.io/]Leohpaz[/url]
+
+[i]LLMs foram utilizadas no código para correção de bugs, auxílio e refatoração.[/i]"
+
+[node name="MenuBannerSlot" type="VBoxContainer" parent="CenterContainer/Tomo/HBoxContainer" unique_id=485055761]
+layout_mode = 2
+
+[node name="TitleBanner" type="TextureRect" parent="CenterContainer/Tomo/HBoxContainer/MenuBannerSlot" unique_id=1387095683]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+texture = ExtResource("6_w8lmu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CenterContainer/Tomo/HBoxContainer/MenuBannerSlot/TitleBanner" unique_id=726129503]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Tomo/HBoxContainer/MenuBannerSlot" unique_id=453232842]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/Tomo/HBoxContainer/MenuBannerSlot/VBoxContainer" unique_id=917041081]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+text = "Menu Iniciar"
+
+[node name="Button2" type="Button" parent="CenterContainer/Tomo/HBoxContainer/MenuBannerSlot/VBoxContainer" unique_id=1118358138]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+text = "Sair do Jogo"
