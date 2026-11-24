@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://bgpg258d3gh7r"]
+
+[ext_resource type="Texture2D" uid="uid://b81y7coj8tc5d" path="res://Assests/Menus/Sprite Sheet/Open/Open_book.png" id="2_bq65x"]
+[ext_resource type="Texture2D" uid="uid://n0s6viaj0adw" path="res://Assests/Menus/Fita_text_paused.png" id="4_lt8cq"]
+[ext_resource type="FontFile" uid="uid://da5y0lamx7bre" path="res://Fonts/UncialAntiqua-Regular.ttf" id="5_g6ism"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv2qh"]
+atlas = ExtResource("2_bq65x")
+region = Rect2(829, 628, 246, 183)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv2qh"]
+bg_color = Color(0.8117647, 0.6784314, 0.4862745, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MainMenu" type="Control" unique_id=953884381]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1824512822]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1712406251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -390.0
+offset_top = -290.0
+offset_right = 390.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tomo" type="TextureRect" parent="CenterContainer" unique_id=960388293]
+custom_minimum_size = Vector2(780, 580)
+layout_mode = 2
+texture = SubResource("AtlasTexture_vv2qh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MenuContent" type="VBoxContainer" parent="CenterContainer/Tomo" unique_id=124134344]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -24.0
+offset_right = 90.0
+offset_bottom = 46.0
+theme_override_constants/separation = -12
+alignment = 1
+
+[node name="MenuBannerSlot" type="Control" parent="CenterContainer/Tomo/MenuContent" unique_id=1239674972]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="TitleBanner" type="TextureRect" parent="CenterContainer/Tomo/MenuContent/MenuBannerSlot" unique_id=2017720002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -38.0
+offset_right = 28.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lt8cq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CenterContainer/Tomo/MenuContent/MenuBannerSlot/TitleBanner" unique_id=887325010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g6ism")
+theme_override_font_sizes/font_size = 12
+text = "Os tomos de Jurandir Mortari"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonSlot" type="VBoxContainer" parent="CenterContainer/Tomo/MenuContent" unique_id=168948781]
+layout_mode = 2
+
+[node name="Iniciar" type="Button" parent="CenterContainer/Tomo/MenuContent/ButtonSlot" unique_id=1117390851]
+custom_minimum_size = Vector2(86, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g6ism")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_vv2qh")
+text = "Iniciar"
+
+[node name="Sair" type="Button" parent="CenterContainer/Tomo/MenuContent/ButtonSlot" unique_id=1364757658]
+custom_minimum_size = Vector2(86, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_g6ism")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_vv2qh")
+text = "Sair"

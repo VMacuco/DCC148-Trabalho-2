@@ -5,6 +5,7 @@ extends AnimatedSprite2D
 var pausado = false
 
 func _ready() -> void:
+	hide()
 	get_viewport().size_changed.connect(_centralizar_livro)
 	_centralizar_livro()
 
@@ -21,6 +22,7 @@ func _input(event):
 func abrir_pause():
 	pausado = true
 	get_tree().paused = true
+	show()
 	play("OpenGrimory")
 
 func fechar_pause():
@@ -33,6 +35,7 @@ func _on_animation_finished():
 		menu.show()
 
 	elif animation == "CloseGrimory":
+		hide()
 		get_tree().paused = false
 
 
