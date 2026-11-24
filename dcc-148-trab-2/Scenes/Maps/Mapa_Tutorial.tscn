@@ -782,6 +782,7 @@ text = "Aperte [A,D] para Andar."
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1641747836]
 stream = ExtResource("15_5a0mu")
 autoplay = true
+bus = &"Music"
 
 [editable path="Checkpoint"]
 [editable path="Checkpoint2"]

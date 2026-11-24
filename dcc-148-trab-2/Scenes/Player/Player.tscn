@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dvksc8pb0grv2" path="res://Assests/Player/Whip.png" id="6_4wape"]
 [ext_resource type="Script" uid="uid://xmwc2thipkvh" path="res://Scenes/Player/camera_2d.gd" id="6_fk5o5"]
 [ext_resource type="Script" uid="uid://bduv6w7ejko5e" path="res://Scenes/Player/hurtbox.gd" id="7_t26db"]
+[ext_resource type="AudioStream" uid="uid://u7asiwjxjw6" path="res://Assests/Sound/SFX/12_Player_Movement_SFX/30_Jump_03.wav" id="9_i5acl"]
+[ext_resource type="AudioStream" uid="uid://6k4o0fnb2d8c" path="res://Assests/Sound/SFX/12_Player_Movement_SFX/56_Attack_03.wav" id="10_epg6k"]
+[ext_resource type="AudioStream" uid="uid://cri87dfij7ykv" path="res://Assests/Sound/SFX/12_Player_Movement_SFX/45_Landing_01.wav" id="11_0u84n"]
+[ext_resource type="AudioStream" uid="uid://cr7di70xdiory" path="res://Assests/Sound/SFX/12_Player_Movement_SFX/03_Step_grass_03.wav" id="12_esmjy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft8w5"]
 atlas = ExtResource("1_s0eop")
@@ -714,7 +718,8 @@ script = ExtResource("1_ft8w5")
 position = Vector2(2, -8.5)
 scale = Vector2(1, 0.953125)
 sprite_frames = SubResource("SpriteFrames_h0jfm")
-animation = &"Whip_magic_release"
+animation = &"Walk"
+frame_progress = 0.046476122
 script = ExtResource("3_h54ih")
 
 [node name="WhipOrign" type="Marker2D" parent="Sprites" unique_id=1038221231]
@@ -764,5 +769,27 @@ script = ExtResource("7_t26db")
 visible = false
 position = Vector2(3, 5)
 shape = SubResource("RectangleShape2D_bl6ij")
+
+[node name="Node" type="Node2D" parent="." unique_id=287889370]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Node" unique_id=1193044981]
+stream = ExtResource("9_i5acl")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Whip" type="AudioStreamPlayer2D" parent="Node" unique_id=1588059342]
+stream = ExtResource("10_epg6k")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="Node" unique_id=920238292]
+stream = ExtResource("11_0u84n")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="Node" unique_id=2031051420]
+stream = ExtResource("12_esmjy")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]

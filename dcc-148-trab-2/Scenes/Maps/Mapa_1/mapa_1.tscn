@@ -819,6 +819,7 @@ texture = ExtResource("12_8u3pr")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=510024400]
 stream = ExtResource("13_5ywyi")
 autoplay = true
+bus = &"Music"
 
 [editable path="Checkpoint"]
 [editable path="Checkpoint2"]

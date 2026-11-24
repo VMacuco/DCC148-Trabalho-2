@@ -360,6 +360,7 @@ position = Vector2(-23, 96)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=778859385]
 stream = ExtResource("10_bcw34")
 autoplay = true
+bus = &"Music"
 
 [editable path="Checkpoint_Entrada"]
 [editable path="Checkpoint"]

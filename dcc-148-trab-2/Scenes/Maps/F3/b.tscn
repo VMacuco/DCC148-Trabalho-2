@@ -298,6 +298,7 @@ shape = SubResource("RectangleShape2D_h0jfm")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1080583546]
 stream = ExtResource("10_iq883")
 autoplay = true
+bus = &"Music"
 
 [editable path="Checkpoint_Entrada"]
 [editable path="Checkpoint"]

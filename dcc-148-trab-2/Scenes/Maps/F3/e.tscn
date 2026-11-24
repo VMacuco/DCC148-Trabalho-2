@@ -239,6 +239,7 @@ shape = SubResource("RectangleShape2D_h0jfm")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1258276040]
 stream = ExtResource("8_qlp5f")
 autoplay = true
+bus = &"Music"
 
 [node name="PlacaTutorial" parent="." unique_id=98484163 instance=ExtResource("9_v73ra")]
 position = Vector2(193, 358)

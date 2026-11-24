@@ -217,5 +217,6 @@ position = Vector2(834, 795)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=282415653]
 stream = ExtResource("6_xrray")
 autoplay = true
+bus = &"Music"
 
 [editable path="Checkpoint"]
