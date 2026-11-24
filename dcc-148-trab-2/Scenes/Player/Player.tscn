@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dvksc8pb0grv2" path="res://Assests/Player/Whip.png" id="6_4wape"]
 [ext_resource type="Script" uid="uid://xmwc2thipkvh" path="res://Scenes/Player/camera_2d.gd" id="6_fk5o5"]
 [ext_resource type="Script" uid="uid://bduv6w7ejko5e" path="res://Scenes/Player/hurtbox.gd" id="7_t26db"]
+[ext_resource type="AudioStream" uid="uid://u7asiwjxjw6" path="res://Assests/Sound/SFX/12_Player_Movement_SFX/30_Jump_03.wav" id="9_i5acl"]
+[ext_resource type="AudioStream" uid="uid://6k4o0fnb2d8c" path="res://Assests/Sound/SFX/12_Player_Movement_SFX/56_Attack_03.wav" id="10_epg6k"]
+[ext_resource type="AudioStream" uid="uid://cri87dfij7ykv" path="res://Assests/Sound/SFX/12_Player_Movement_SFX/45_Landing_01.wav" id="11_0u84n"]
+[ext_resource type="AudioStream" uid="uid://cr7di70xdiory" path="res://Assests/Sound/SFX/12_Player_Movement_SFX/03_Step_grass_03.wav" id="12_esmjy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft8w5"]
 atlas = ExtResource("1_s0eop")
@@ -625,7 +629,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b7nrf")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Whip_magic_cast",
 "speed": 5.0
 }, {
@@ -647,7 +651,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ntbx5")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Whip_magic_release",
 "speed": 5.0
 }, {
@@ -710,23 +714,30 @@ size = Vector2(19, 27)
 collision_layer = 2
 script = ExtResource("1_ft8w5")
 
-[node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=856813863]
+[node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=856813863 groups=["Player"]]
 position = Vector2(2, -8.5)
 scale = Vector2(1, 0.953125)
 sprite_frames = SubResource("SpriteFrames_h0jfm")
 animation = &"Walk"
+frame_progress = 0.046476122
 script = ExtResource("3_h54ih")
 
+[node name="WhipOrign" type="Marker2D" parent="Sprites" unique_id=1038221231]
+position = Vector2(-9, 12.065574)
+
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=428085725]
+visible = false
 position = Vector2(3, 5)
 shape = SubResource("RectangleShape2D_ryepx")
 
 [node name="Colison_dash" type="CollisionShape2D" parent="." unique_id=1030888764]
+visible = false
 position = Vector2(3, 15)
 shape = SubResource("RectangleShape2D_h0jfm")
 disabled = true
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="Colison_dash" unique_id=1134860510]
+visible = false
 position = Vector2(0, -4)
 scale = Vector2(1.2, 1)
 enabled = false
@@ -735,11 +746,13 @@ target_position = Vector2(0, -15)
 collide_with_areas = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1038382445]
+visible = false
 offset = Vector2(0, -50)
 zoom = Vector2(2, 2)
 script = ExtResource("6_fk5o5")
 
 [node name="WhipLine" type="Line2D" parent="." unique_id=545375402]
+visible = false
 texture_filter = 1
 texture_repeat = 2
 width = 3.0
@@ -747,12 +760,36 @@ texture = ExtResource("6_4wape")
 texture_mode = 1
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=834850216]
+visible = false
 collision_layer = 32
 collision_mask = 64
 script = ExtResource("7_t26db")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=147857729]
+visible = false
 position = Vector2(3, 5)
 shape = SubResource("RectangleShape2D_bl6ij")
+
+[node name="Node" type="Node2D" parent="." unique_id=287889370]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Node" unique_id=1193044981]
+stream = ExtResource("9_i5acl")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Whip" type="AudioStreamPlayer2D" parent="Node" unique_id=1588059342]
+stream = ExtResource("10_epg6k")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="Node" unique_id=920238292]
+stream = ExtResource("11_0u84n")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="Node" unique_id=2031051420]
+stream = ExtResource("12_esmjy")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]

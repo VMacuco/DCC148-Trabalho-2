@@ -18,27 +18,34 @@ const OFFSETS := {
 
 var state: State = State.IDLE
 
+var whip_animation_active := false
+
 
 func _ready() -> void:
 	animation_finished.connect(_on_animation_finished)
 	play("Idle")
 	GameMannager.Player_Death.connect(_process_player_death)
-	GameMannager.respawn_player.connect(func(): play("Idle"))
+	GameMannager.respawn_player.connect(_on_player_respawn)
+	player.whip_started.connect(_on_whip_started)
+	player.whip_ended.connect(_on_whip_ended)
+	
 
 
 func _process(_delta: float) -> void:
 	_update_flip()
 	var new_state := _get_state()
+	if new_state == State.SLIDE:
+		whip_animation_active = false
+	elif whip_animation_active:
+		return
 	if new_state != state:
 		state = new_state
 		_play_state()
-
 
 func _get_state() -> State:
 	# Dash tem prioridade sobre tudo
 	if player.is_dashing:
 		return State.SLIDE
-
 	# Wall slide vem antes do "no ar", senão cairia em Falling
 	if player.is_wall_sliding:
 		return State.WALL_SLIDE
@@ -90,7 +97,53 @@ func _process_player_death()->void:
 
 
 func _on_animation_finished() -> void:
+	#Chicote: Cast -> Hold
+	print("ANIMAÇÃO FINALIZADA: ", animation)
+
+	if animation == "Whip_magic_cast":
+		print("CAST FINALIZADO!")
+
+		if whip_animation_active:
+			print("INICIANDO HOLD")
+			play("Whip_magic_hold")
+			_update_flip()
+		return
+	
+	#Chicote: Release
+	if animation == "Whip_magic_release":
+		whip_animation_active = false
+		state = _get_state()
+		_play_state()
+		return
+	
+	
 	# Falling_begin -> Falling
 	if state == State.FALL_BEGIN:
 		state = State.FALLING
 		play("Falling")
+
+func _on_whip_started()->void:
+	print("WHIP STARTED")
+
+	print("Cast existe: ", sprite_frames.has_animation("Whip_magic_cast"))
+
+	if sprite_frames.has_animation("Whip_magic_cast"):
+		print("Quantidade de frames: ",
+			sprite_frames.get_frame_count("Whip_magic_cast"))
+
+		print("Loop ativado: ",
+			sprite_frames.get_animation_loop("Whip_magic_cast"))
+
+	whip_animation_active = true
+	play("Whip_magic_cast")
+	_update_flip()
+
+func _on_whip_ended()->void:
+	if not whip_animation_active: return
+	play("Whip_magic_release")
+	_update_flip()
+
+func _on_player_respawn()->void:
+	whip_animation_active = false
+	state = State.IDLE
+	play("Idle")

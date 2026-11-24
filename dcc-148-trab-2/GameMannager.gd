@@ -12,6 +12,8 @@ var has_check_poin: bool = false
 var pending_spawn: bool = false
 signal Health_change
 signal Player_Death
+var current_level : int
+var final_level := 4
 
 func _ready() -> void:
 	HP = maxHP
@@ -24,7 +26,7 @@ func set_SavePoint(pos: Vector2, scene_path: String)->void:
 	print("Ponto de salvamento")
 
 func take_damage(damage: float = 1.0) -> void:
-	if is_player_dead:
+	if is_player_dead or LevelMannager.changing:
 		return
 	HP -= damage
 	Health_change.emit(HP, maxHP)
@@ -55,7 +57,7 @@ func death_sequence()->void:
 	is_player_dead = false
 	await Death_Transition.open()
 
-func _respawn()->void:
+func _respawn()->void: # não está sendo mais usada
 	if is_player_dead:
 		Player_Death.emit()
 		is_player_dead = false
@@ -67,8 +69,11 @@ func _respawn()->void:
 				get_tree().change_scene_to_file(SavePoint_Scene)
 				return
 	respawn_player.emit()
-			
-			
-			
-			
-			
+
+func _change_level() -> void:
+	current_level += 1
+	LevelMannager.change_level(current_level)
+
+func start_game() -> void:
+	current_level = 1
+	LevelMannager.change_level(current_level)

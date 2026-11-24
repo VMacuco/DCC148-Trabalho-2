@@ -5,6 +5,7 @@ extends Area2D
 signal Level_Complete
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var promptlabel := $Label
+@onready var pickup_sound := $AudioStreamPlayer2D
 
 @export var texture : Texture2D:
 	set(value):
@@ -24,7 +25,9 @@ func _ready() -> void:
 	sprite.texture = texture
 	if Engine.is_editor_hint():
 		return
-
+	
+	Level_Complete.connect(LevelMannager.complete_level)
+	
 	promptlabel.modulate.a = 0.0
 	promptlabel.visible = false
 
@@ -60,7 +63,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if player_inside and event.is_action_pressed("Interagir"):
 		player_inside = false
 		show_prompt(false)
+		pickup_sound.play()
 		Level_Complete.emit()
+		
 		
 
 func show_prompt(show_it : bool) -> void:
