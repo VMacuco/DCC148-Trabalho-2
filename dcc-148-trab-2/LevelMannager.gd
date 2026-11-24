@@ -8,7 +8,7 @@ const LEVELS := {
 	3: "res://Scenes/Maps/F3/e.tscn",
 	4: "res://Scenes/Maps/mapa4.tscn"
 }
-const END_SCENE := "Cena dos créditos"   # depois da última fase
+const END_SCENE := "res://Scenes/Menus/Credits/créditos.tscn"   # depois da última fase
 
 var current_level := 1
 var changing := false
