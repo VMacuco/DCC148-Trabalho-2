@@ -59,3 +59,6 @@ Vá até a pasta do arquivo pelo terminal e execute os comandos abaixo:
 
  * Vá até a pasta do arquivo pelo terminal e execute os comandos abaixo:
  ```
+    sudo chmod +x Tomos de Jurandir.x86_64
+    sudo ./Tomos de Jurandir.x86_64
+
