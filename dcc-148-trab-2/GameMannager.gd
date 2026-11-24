@@ -77,3 +77,4 @@ func _change_level() -> void:
 func start_game() -> void:
 	current_level = 1
 	LevelMannager.change_level(current_level)
+	Hud.show()
