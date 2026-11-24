@@ -16210,7 +16210,7 @@ texture = ExtResource("26_2kjtp")
 stream = ExtResource("27_2kjtp")
 autoplay = true
 bus = &"Music"
-parameters/looping = false
+parameters/looping = true
 
 [editable path="Checkpoint"]
 [editable path="Checkpoint2"]
